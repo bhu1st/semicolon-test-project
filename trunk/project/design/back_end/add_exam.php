@@ -10,5 +10,7 @@
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 </head>
     
-
+<?php
+include "nav.php";
+?>
 </html>

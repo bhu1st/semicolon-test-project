@@ -1,3 +1,7 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+         
      <div id="menu">
             <ul>                                        
                <a class="brand" href="./index.html">Education</a>
@@ -23,4 +27,6 @@
         
             </ul>
         </div>
-   
+       </div>
+      </div>
+    </div>

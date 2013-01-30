@@ -9,6 +9,8 @@
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 </head>
-    
+  <?php
+include "nav.php";
+?>  
 
 </html>
