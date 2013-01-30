@@ -19,11 +19,7 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+          <link rel="shortcut icon" href="assets/ico/favicon.png">
 
   </head>
 
@@ -40,24 +36,9 @@
     <p class="lead">ADD/UPDATE</p>
   </div>
 </header>
-<div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <?php
-
-include "nav.php";
-
-?>
-
-        </div>
-      </div>
-    </div>
-
+		<?php
+        include "nav.php";
+        ?>
 
   <div class="container">
   <table border="2" width="1200">
