@@ -63,7 +63,7 @@
       <h1>Manage Course</h1>
       <p>From here you can manage courses of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Courses <span style="font-size:14px;">(<a href=""> Add Course </a>)</span></h3>
+	  <h3 class="pull-left">Courses <span style="font-size:14px;">(<a href="course_add.php"> Add Course </a>)</span></h3>
 	    
 	  
 	  <table class="table table-hover">
@@ -71,8 +71,7 @@
                 <tr>
                   <th>#</th>
                   <th>Course Name</th>
-				  <th>Course Description</th>
-				  <th>Actions</th>
+				  <th>Description</th>
                 </tr>
               </thead>
               
@@ -80,36 +79,25 @@
                 <tr>
                   <td>1</td>
                   <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+				  <td>Ram lal Maherjan</td>
+				  
+				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
-                <tr>
-                  <td>2</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
-                
-                <tr>
-                  <td>3</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
-              </tbody>
+                </tbody>
                 
               </table>
-	    <div class="pagination">
-  <ul>
+	  
+	      <div class="pagination">
+    <ul>
     <li><a href="#">Prev</a></li>
     <li><a href="#">1</a></li>
     <li><a href="#">2</a></li>
     <li><a href="#">3</a></li>
     <li><a href="#">4</a></li>
     <li><a href="#">Next</a></li>
-  </ul>
-</div>
+    </ul>
+    </div>
 	  	  
 
     </div> <!-- /container -->
