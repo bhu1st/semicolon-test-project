@@ -48,24 +48,35 @@
 	  
 	  <form class="form-horizontal">
   <div class="control-group">
-    <label class="control-label" for="inputEmail">Course Name</label>
+    <label class="control-label" for="inputEmail">Question</label>
     <div class="controls">
       <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
  
   <div class="control-group">
-    <label class="control-label" for="inputEmail">Course Description</label>
+    <label class="control-label" for="inputEmail">Question Type</label>
     <div class="controls">
-     <textarea rows="3"></textarea>
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
  
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Mark Carried</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
   
-  
+<div class="control-group">
+    <label class="control-label" for="inputEmail">Remark</label>
+    <div class="controls">
+     <textarea rows="3"></textarea>
+    </div>
+  </div>  
   <div class="control-group">
     <div class="controls">
-      <input type="submit" class="btn btn-success" name="submit" value="Add Course">
+      <input type="submit" class="btn btn-success" name="submit" value="Add Question">
     </div>
   </div>
 </form>
