@@ -64,7 +64,7 @@
       <h1>Welcome, Admin</h1>
       <p>From the administration section you can manage all aspects of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Users <span style="font-size:14px;">(<a href=""> View all </a> | <a href=""> Add Users </a>)</span></h3>
+	  <h3 class="pull-left">Recent Users <span style="font-size:14px;">(<a href="users.php"> View all </a> | <a href="users_add.php"> Add Users </a>)</span></h3>
 	    
 	  
 	  
