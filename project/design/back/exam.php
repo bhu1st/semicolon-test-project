@@ -87,33 +87,33 @@
                   <td>1</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
+                  <td>10</td>
+                  <td>5</td>
+				  <td>10 AM</td>
 				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Add Question</a> | <a href="#">View Questions</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
                   <td>2</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
+                  <td>10</td>
+                  <td>5</td>
+				  <td>10 AM</td>
 				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Add Question</a> | <a href="#">View Questions</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
                   <td>3</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
+                  <td>10</td>
+                  <td>5</td>
+				  <td>10 AM</td>
 				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Add Question</a> | <a href="#">View Questions</a> | <a href="#">Delete</a></td>
                 </tr>
               </tbody>
                 

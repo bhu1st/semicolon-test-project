@@ -45,11 +45,12 @@
               <li class="active"><a href="index.php">Home</a></li>
       	      <li><a href="users.php">Users</a></li>      
 			  <li><a href="course.php">Courses</a></li>			    
-			  <li><a href="exam.php">Exams</a></li>
-			  <li><a href="question.php">Questions</a></li>
-			  <li><a href="answer.php">Answers</a></li>
+			  <li><a href="#">Exams</a></li>
+			  <li><a href="#">Questions</a></li>
+			  <li><a href="#">Answers</a></li>
 
-             </ul>
+   
+            </ul>
 			<form class="navbar-form pull-right">
   <input type="text" class="span2">
   <button type="submit" class="btn">Submit</button>
@@ -61,25 +62,22 @@
 
     <div class="container">
 
-      <h1>Welcome, Admin</h1>
-      <p>From the administration section you can manage all aspects of Online Examination System.</p>
+      <h1>Manage Users</h1>
+      <p>From here you can manage Questions of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Users <span style="font-size:14px;">(<a href="users.php"> View all </a> | <a href="users_add.php"> Add Users </a>)</span></h3>
+	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="users_add.php"> Add Questions </a> | <a href=""> Questions Types</a>)</span></h3>
 	    
-	  
-	  
 	  
 	  <table class="table table-hover">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Fullname</th>
-				  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Address</th>
-				  <th>Created on</th>
-				  <th>Actions</th>
-                </tr>
+				  <th>Question</th>
+                  <th>Question Type</th>
+				  <th>Marks</th>
+				  <th>answer</th>
+				  <th>Remark</th>
+				  </tr>
               </thead>
               
                <tbody>
@@ -87,65 +85,47 @@
                   <td>1</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
+                  <td>10</td>
+                  <td>5</td>
+				  <td>10 AM</td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
                   <td>2</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
+                  <td>10</td>
+                  <td>5</td>
+				  <td>10 AM</td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
                   <td>3</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
+                  <td>10</td>
+                  <td>5</td>
+				  <td>10 AM</td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
+              </tbody>
                 
-                <tr>
-                  <td>4</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                </tbody>
-                
-              </table>
-	  
-	  
-	  <div class="row">
-        <div class="span4">
-          <h4>Manage Exams</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details</a></p>
-        </div>
-        <div class="span4">
-          <h4>Manage Courses</h4>
-          <p>Donec id  elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details</a></p>
-       </div>
-        <div class="span4">
-          <h4>Manage Questions</h4>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details </a></p>
-        </div>
-      </div>
+              </table>  	  
 
 	  
+	  <div class="pagination">
+  <ul>
+    <li><a href="#">Prev</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>
+	  	  
 
     </div> <!-- /container -->
 
