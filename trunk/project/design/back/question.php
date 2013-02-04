@@ -41,7 +41,7 @@
       <h1>Manage Users</h1>
       <p>From here you can manage Questions of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="users_add.php"> Add Questions </a> | <a href=""> Questions Types</a>)</span></h3>
+	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="question_add.php"> Add Questions </a> | <a href=""> Questions Types</a>)</span></h3>
 	    
 	  
 	  <table class="table table-hover">
