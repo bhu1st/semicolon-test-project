@@ -62,79 +62,96 @@
 
     <div class="container">
 
-      <h1>Manage Users</h1>
-      <p>From here you can manage users of Online Examination System.</p>
-	  <br/>	  
-	  <h3 class="pull-left">Recent Users <span style="font-size:14px;">(<a href="users_add.php"> Add Users </a> | <a href=""> User Types</a>)</span></h3>
-	    
+	<h1>Add Users</h1>
+      <p>From here you can add users of Online Examination System.</p>
 	  
-	  <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Fullname</th>
-				  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Address</th>
-				  <th>Created on</th>
-				  <th>Actions</th>
-                </tr>
-              </thead>
-              
-               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                
-                <tr>
-                  <td>2</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                
-                <tr>
-                  <td>3</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                
-                <tr>
-                  <td>4</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                </tbody>
-                
-              </table>
 	  
-	  <div class="pagination">
-  <ul>
-    <li><a href="#">Prev</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
-</div>
+	  <br/>      <br/>      
+	  <form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Username</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">Password</label>
+    <div class="controls">
+      <input type="password" id="inputPassword" placeholder="">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Email</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  
+  
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">User Type</label>
+    <div class="controls">
+      <select>
+              <option>Admin</option>
+			  <option>Teacher</option>
+              <option>Student</option>              
+       <select>
+    </div>
+  </div> 
+			
+  
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">First Name</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  
+    <div class="control-group">
+    <label class="control-label" for="inputEmail">Middle Name</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Last Name</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Phone</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Address</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  
+  
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Website</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+  
+  
+  <div class="control-group">
+    <div class="controls">
+      <input type="submit" class="btn btn-success" name="submit" value="Add User">
+    </div>
+  </div>
+</form>
+
+	  
 	  	  
 
     </div> <!-- /container -->
