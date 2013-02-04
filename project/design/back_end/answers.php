@@ -49,8 +49,8 @@ include "nav.php";
 ?>
         </div>
       </div>
-    </div>
 
+    </div>
 	
 	
           <a class="brand" href="./index.html">Bootstrap</a>
