@@ -59,11 +59,11 @@
   <input type="text" class="span2">
   <button type="submit" class="btn">Submit</button>
 </form>
--->
-          </div><!--/.nav-collapse -->
+
+          </div><!--/.nav-collapse
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class="container">
 

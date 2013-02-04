@@ -35,12 +35,13 @@
 			   include "nav.php";
   ?>
 			   
-		
+			   
+         
 
     <div class="container">
 
-      <h1>Add New Course</h1>
-      <p>From here you can add courses of Online Examination System.</p>
+      <h1>Add New Question</h1>
+      <p>From here you can add questions of Online Examination System.</p>
 	  
 	    
 	  </br></br>
