@@ -70,11 +70,8 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Fullname</th>
-				  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Address</th>
-				  <th>Created on</th>
+                  <th>Course Name</th>
+				  <th>Course Description</th>
 				  <th>Actions</th>
                 </tr>
               </thead>
@@ -84,42 +81,23 @@
                   <td>1</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
                   <td>2</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
                   <td>3</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
-                
-                <tr>
-                  <td>4</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
-                </tbody>
+              </tbody>
                 
               </table>
 	    <div class="pagination">

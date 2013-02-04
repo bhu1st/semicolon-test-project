@@ -72,11 +72,16 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Fullname</th>
+                  <th>Username</th>
 				  <th>Email</th>
+				  <th>Full Name</th>
+				  <th>Mid Name</th>
+				  <th>Last Name</th>
                   <th>Phone</th>
                   <th>Address</th>
-				  <th>Created on</th>
+				  <th>Website</th>
+				  <th>Created at</th>
+				  <th>User Type</th>
 				  <th>Actions</th>
                 </tr>
               </thead>
@@ -89,7 +94,12 @@
                   <td>9841556644</td>
                   <td>Newroad,kathmandu</td>
 				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
@@ -99,7 +109,12 @@
                   <td>9841556644</td>
                   <td>Newroad,kathmandu</td>
 				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
@@ -109,21 +124,17 @@
                   <td>9841556644</td>
                   <td>Newroad,kathmandu</td>
 				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td></td>
+				  <td></td>	
+				 <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
+              </tbody>
                 
-                <tr>
-                  <td>4</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                </tbody>
-                
-              </table>
+              </table>  	  
+
 	  
 	  <div class="pagination">
   <ul>
