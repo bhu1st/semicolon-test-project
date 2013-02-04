@@ -13,10 +13,15 @@
       	      <li><a href="users.php">Users</a></li>      
 			  <li><a href="course.php">Courses</a></li>			    
 			  <li><a href="exam.php">Exams</a></li>
-			  <li><a href="#">Questions</a></li>
-			  <li><a href="#">Answers</a></li>
+			  <li><a href="question.php">Questions</a></li>
+			  <li><a href="answer.php">Answers</a></li>
 
              </ul>
 			<form class="navbar-form pull-right">
   <input type="text" class="span2">
   <button type="submit" class="btn">Submit</button>
+  
+  </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
