@@ -45,7 +45,7 @@
               <li class="active"><a href="index.php">Home</a></li>
       	      <li><a href="users.php">Users</a></li>      
 			  <li><a href="course.php">Courses</a></li>			    
-			  <li><a href="#">Exams</a></li>
+			  <li><a href="exam.php">Exams</a></li>
 			  <li><a href="#">Questions</a></li>
 			  <li><a href="#">Answers</a></li>
 
@@ -62,21 +62,22 @@
 
     <div class="container">
 
-      <h1>Manage Users</h1>
-      <p>From here you can manage users of Online Examination System.</p>
+      <h1>Manage Exams</h1>
+      <p>From here you can manage exams of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Users <span style="font-size:14px;">(<a href="users_add.php"> Add Users </a> | <a href=""> User Types</a>)</span></h3>
+	  <h3 class="pull-left">Recent Exams <span style="font-size:14px;">(<a href="exam_add.php"> Add Exam </a>)</span></h3>
 	    
 	  
 	  <table class="table table-hover">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Username</th>
-				  <th>Email</th>
-				  <th>Full Name</th>
-				  <th>Phone</th>
-                  <th>User Type</th>
+                  <th>Exam Name</th>
+				  <th>Description</th>
+				  <th>Full Marks</th>
+				  <th>Pass Marks</th>
+				  <th>Start Time</th>
+                  <th>Exam Date</th>
 				  <th>Actions</th>
                 </tr>
               </thead>
@@ -89,6 +90,7 @@
                   <td>9841556644</td>
                   <td>Newroad,kathmandu</td>
 				  <td>25 jan, 2012</td>
+				  <td></td>
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
@@ -99,6 +101,7 @@
                   <td>9841556644</td>
                   <td>Newroad,kathmandu</td>
 				  <td>25 jan, 2012</td>
+				  <td></td>
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
@@ -109,6 +112,7 @@
                   <td>9841556644</td>
                   <td>Newroad,kathmandu</td>
 				  <td>25 jan, 2012</td>
+				  <td></td>
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
               </tbody>
