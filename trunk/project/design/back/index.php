@@ -30,7 +30,12 @@
   </head>
 
   <body>
-
+  
+  
+  <?php
+			   include "nav.php";
+			   ?>
+<!--
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -54,6 +59,7 @@
   <input type="text" class="span2">
   <button type="submit" class="btn">Submit</button>
 </form>
+-->
           </div><!--/.nav-collapse -->
         </div>
       </div>
