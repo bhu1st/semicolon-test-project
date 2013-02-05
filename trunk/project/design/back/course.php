@@ -61,7 +61,7 @@
                   <td>Ram lal Maherjan</td>
 				  <td>Ram lal Maherjan</td>
 				  
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+				  <td><a href="exam.php">View Exams</a> | <a href="#">Edit</a> |  <a href="#">Delete</a></td>
                 </tr>
                 
                 </tbody>

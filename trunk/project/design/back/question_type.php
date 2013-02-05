@@ -30,77 +30,60 @@
   </head>
 
   <body>
-
     <?php
 		include "nav.php";
 	?>	
-
     <div class="container">
 
-      <h1>Manage Questions of [exam name]</h1>
-      <p>From here you can manage Questions of [exam name] under Online Examination System.</p>
+      <h1>Manage Question Types</h1>
+      <p>From here you can manage Questions Typesof Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="question_add.php"> Add Questions </a> | <a href="question_type.php">Questions Types</a>)</span></h3>
+	  <h3 class="pull-left">Available Question Types<span style="font-size:14px;"></span></h3>
 	    
 	  
 	  <table class="table table-hover">
               <thead>
                 <tr>
                   <th>#</th>
-				  <th>Question</th>
-                  <th>Question Type</th>
-				  <th>Marks</th>
-				  <th>answer</th>
-				  <th>Remark</th>
-				  </tr>
+                  <th>Question types</th>
+				  <th>Actions</th>
+                </tr>
               </thead>
               
                <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
+                  <td>Objective</td>
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
                   <td>2</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+                  <td>Subjective</td>
+				   <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
-                
-                <tr>
-                  <td>3</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
+                              
               </tbody>
                 
-              </table>  	  
+              </table>  
 
-	  
-	  <div class="pagination">
-  <ul>
-    <li><a href="#">Prev</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
-</div>
-	  	  
+<!--question type add form-->			  
+		<h2>Add Questions Types</h2>
+	  	<form class="form-horizontal">
+		  <div class="control-group">
+			<label class="control-label" for="inputEmail">Question Type</label>
+			<div class="controls">
+			  <input type="text" id="inputEmail" placeholder="">
+			</div>
+		  </div>
+	   
+		  <div class="control-group">
+			<div class="controls">
+			  <input type="submit" class="btn btn-success" name="submit" value="Question Type">
+			</div>
+		  </div>
+	</form>
+  
 
     </div> <!-- /container -->
 
