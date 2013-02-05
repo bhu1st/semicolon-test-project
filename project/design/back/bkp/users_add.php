@@ -31,10 +31,34 @@
 
   <body>
 
-    <?php
-			   include "nav.php";
-?>
-        
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.php">Online Examination System</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="index.php">Home</a></li>
+      	      <li><a href="users.php">Users</a></li>      
+			  <li><a href="course.php">Courses</a></li>			    
+			  <li><a href="#">Exams</a></li>
+			  <li><a href="#">Questions</a></li>
+			  <li><a href="#">Answers</a></li>
+
+   
+            </ul>
+			<form class="navbar-form pull-right">
+  <input type="text" class="span2">
+  <button type="submit" class="btn">Submit</button>
+</form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
     <div class="container">
 
@@ -42,80 +66,80 @@
       <p>From here you can add users of Online Examination System.</p>
 	  
 	  
-	  <br/>  <br/>      
-	  <form class="form-horizontal" action="actions/users_add.php" method="POST">
+	  <br/>      <br/>      
+	  <form class="form-horizontal">
   <div class="control-group">
-    <label class="control-label" for="username">Username</label>
+    <label class="control-label" for="inputEmail">Username</label>
     <div class="controls">
-      <input type="text" id="username" name="username" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="password">Password</label>
+    <label class="control-label" for="inputPassword">Password</label>
     <div class="controls">
-      <input type="password" id="password" name="password" placeholder="">
+      <input type="password" id="inputPassword" placeholder="">
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="email">Email</label>
+    <label class="control-label" for="inputEmail">Email</label>
     <div class="controls">
-      <input type="text" id="email"  name="email" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   
   
   <div class="control-group">
-    <label class="control-label" for="usertype">User Type</label>
+    <label class="control-label" for="inputEmail">User Type</label>
     <div class="controls">
-      <select name="usertype">
-              <option value="1">Admin</option>
-			  <option value="2">Teacher</option>
-              <option value="3">Student</option>              
+      <select>
+              <option>Admin</option>
+			  <option>Teacher</option>
+              <option>Student</option>              
        <select>
     </div>
   </div> 
 			
   
   <div class="control-group">
-    <label class="control-label" for="firstname">First Name</label>
+    <label class="control-label" for="inputEmail">First Name</label>
     <div class="controls">
-      <input type="text" id="firstname" name="firstname" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   
     <div class="control-group">
-    <label class="control-label" for="midname">Middle Name</label>
+    <label class="control-label" for="inputEmail">Middle Name</label>
     <div class="controls">
-      <input type="text" id="midname" name="midname" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   
   <div class="control-group">
-    <label class="control-label" for="lastname">Last Name</label>
+    <label class="control-label" for="inputEmail">Last Name</label>
     <div class="controls">
-      <input type="text" id="lastname" name="lastname" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   
   <div class="control-group">
-    <label class="control-label" for="phone">Phone</label>
+    <label class="control-label" for="inputEmail">Phone</label>
     <div class="controls">
-      <input type="text" id="phone" name="phone" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   
   <div class="control-group">
-    <label class="control-label" for="address">Address</label>
+    <label class="control-label" for="inputEmail">Address</label>
     <div class="controls">
-      <input type="text" id="address" name="address" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   
   
   <div class="control-group">
-    <label class="control-label" for="website">Website</label>
+    <label class="control-label" for="inputEmail">Website</label>
     <div class="controls">
-      <input type="text" id="website" name="website" placeholder="">
+      <input type="text" id="inputEmail" placeholder="">
     </div>
   </div>
   
@@ -148,7 +172,6 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
-	
-	
+
   </body>
 </html>

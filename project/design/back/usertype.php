@@ -31,28 +31,26 @@
 
   <body>
 
-    <?php
-		include "nav.php";
-	?>	
-
+   
     <div class="container">
 
-      <h1>Manage Questions of [exam name]</h1>
-      <p>From here you can manage Questions of [exam name] under Online Examination System.</p>
+      <h1>Manage Users</h1>
+      <p>From here you can manage users of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="question_add.php"> Add Questions </a> | <a href="question_type.php">Questions Types</a>)</span></h3>
+	  <h3 class="pull-left">Recent User Types <span style="font-size:14px;">(<a href="usertype_add.php"> Add User Types </a> | <a href="users.php"> Users</a>)</span></h3>
 	    
 	  
 	  <table class="table table-hover">
               <thead>
                 <tr>
                   <th>#</th>
-				  <th>Question</th>
-                  <th>Question Type</th>
-				  <th>Marks</th>
-				  <th>answer</th>
-				  <th>Remark</th>
-				  </tr>
+                  <th>Username</th>
+				  <th>Email</th>
+				  <th>Full Name</th>
+				  <th>Phone</th>
+                  <th>User Type</th>
+				  <th>Actions</th>
+                </tr>
               </thead>
               
                <tbody>
@@ -60,9 +58,9 @@
                   <td>1</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
+                  <td>9841556644</td>
+                  <td>Newroad,kathmandu</td>
+				  <td>25 jan, 2012</td>
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
@@ -70,9 +68,9 @@
                   <td>2</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
+                  <td>9841556644</td>
+                  <td>Newroad,kathmandu</td>
+				  <td>25 jan, 2012</td>
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
@@ -80,9 +78,9 @@
                   <td>3</td>
                   <td>Ram lal Maherjan</td>
 				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
+                  <td>9841556644</td>
+                  <td>Newroad,kathmandu</td>
+				  <td>25 jan, 2012</td>
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
               </tbody>

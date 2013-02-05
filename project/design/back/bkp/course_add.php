@@ -31,71 +31,65 @@
 
   <body>
 
-    <?php
-		include "nav.php";
-	?>	  
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.php">Online Examination System</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="index.php">Home</a></li>
+      	      <li><a href="users.php">Users</a></li>      
+			  <li><a href="course.php">Courses</a></li>			    
+			  <li><a href="#">Exams</a></li>
+			  <li><a href="#">Questions</a></li>
+			  <li><a href="#">Answers</a></li> 
+             </ul>
+			<form class="navbar-form pull-right">
+  <input type="text" class="span2">
+  <button type="submit" class="btn">Submit</button>
+</form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
     <div class="container">
 
-	<h1>Add Exam</h1>
-      <p>From here you can add exam of Online Examination System.</p>
+      <h1>Add New Course</h1>
+      <p>From here you can add courses of Online Examination System.</p>
 	  
+	    
+	  </br></br>
 	  
-	  <br/>      <br/>      
 	  <form class="form-horizontal">
-	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Exam Name</label>
-		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
-		</div>
-	  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Course Name</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="">
+    </div>
+  </div>
+ 
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Course Description</label>
+    <div class="controls">
+     <textarea rows="3"></textarea>
+    </div>
+  </div>
+ 
+  
+  
+  <div class="control-group">
+    <div class="controls">
+      <input type="submit" class="btn btn-success" name="submit" value="Add Course">
+    </div>
+  </div>
+</form>
 	 
-	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Exam Description</label>
-		<div class="controls">
-		 <textarea rows="3"></textarea>
-		</div>
-	  </div>
-  
-  
-	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Full Mark</label>
-		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
-		</div>
-	  </div>
-	  
-	  
-	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Pass Mark</label>
-		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
-		</div>
-	  </div>
-	  
-	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Start Time</label>
-		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
-		</div>
-	  </div>
-	  
-	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Exam Date</label>
-		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
-		</div>
-	  </div>
-	  
-	  
-	  
-	  <div class="control-group">
-		<div class="controls">
-		  <input type="submit" class="btn btn-success" name="submit" value="Add User">
-		</div>
-	  </div>
-	</form>
-
 	  
 	  	  
 

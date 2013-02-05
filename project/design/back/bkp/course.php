@@ -31,75 +31,73 @@
 
   <body>
 
-    <?php
-		include "nav.php";
-	?>	
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="index.php">Online Examination System</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="index.php">Home</a></li>
+      	      <li><a href="users.php">Users</a></li>      
+			  <li><a href="course.php">Courses</a></li>			    
+			  <li><a href="#">Exams</a></li>
+			  <li><a href="#">Questions</a></li>
+			  <li><a href="#">Answers</a></li> 
+             </ul>
+			<form class="navbar-form pull-right">
+  <input type="text" class="span2">
+  <button type="submit" class="btn">Submit</button>
+</form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
     <div class="container">
 
-      <h1>Manage Questions of [exam name]</h1>
-      <p>From here you can manage Questions of [exam name] under Online Examination System.</p>
+      <h1>Manage Course</h1>
+      <p>From here you can manage courses of Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="question_add.php"> Add Questions </a> | <a href="question_type.php">Questions Types</a>)</span></h3>
+	  <h3 class="pull-left">Courses <span style="font-size:14px;">(<a href="course_add.php"> Add Course </a>)</span></h3>
 	    
 	  
 	  <table class="table table-hover">
               <thead>
                 <tr>
                   <th>#</th>
-				  <th>Question</th>
-                  <th>Question Type</th>
-				  <th>Marks</th>
-				  <th>answer</th>
-				  <th>Remark</th>
-				  </tr>
+                  <th>Course Name</th>
+				  <th>Description</th>
+                </tr>
               </thead>
               
                <tbody>
                 <tr>
                   <td>1</td>
                   <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+				  <td>Ram lal Maherjan</td>
+				  
+				  <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
                 
-                <tr>
-                  <td>2</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
+                </tbody>
                 
-                <tr>
-                  <td>3</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
-              </tbody>
-                
-              </table>  	  
-
+              </table>
 	  
-	  <div class="pagination">
-  <ul>
+	      <div class="pagination">
+    <ul>
     <li><a href="#">Prev</a></li>
     <li><a href="#">1</a></li>
     <li><a href="#">2</a></li>
     <li><a href="#">3</a></li>
     <li><a href="#">4</a></li>
     <li><a href="#">Next</a></li>
-  </ul>
-</div>
+    </ul>
+    </div>
 	  	  
 
     </div> <!-- /container -->

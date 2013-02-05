@@ -31,34 +31,9 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="index.php">Online Examination System</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="index.php">Home</a></li>
-      	      <li><a href="users.php">Users</a></li>      
-			  <li><a href="course.php">Courses</a></li>			    
-			  <li><a href="#">Exams</a></li>
-			  <li><a href="#">Questions</a></li>
-			  <li><a href="#">Answers</a></li>
-
-   
-            </ul>
-			<form class="navbar-form pull-right">
-  <input type="text" class="span2">
-  <button type="submit" class="btn">Submit</button>
-</form>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+    <?php
+		include "nav.php";
+	?>	
 
     <div class="container">
 
@@ -82,35 +57,43 @@
               </thead>
               
                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
                 
-                <tr>
-                  <td>2</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
+				<?php
+					include "actions/connection.php";				
+					
+					$sql = "select * from users";
+							
+				
+					$result = mysql_query($sql);
+				
+
+			while(($row = mysql_fetch_assoc($result))!=0)
+				  {
+				/*	
+				 echo "<pre>";
+				 print_r($row);
+				 echo "</pre>";
+				 */
+				 $count++;
+						
+			
+			
+			
+				?>
+				
+				<tr>
+                  <td><?php echo $count;?></td>
+                  <td><?php echo $row['username'];?></td>
+				  <td><?php echo $row['email'];?></td>
+				  <td><?php echo $row['phone'];?></td>
+                  <td><?php echo $row['address'];?></td>
+                  <td><?php echo date("Y-m-d", $row['created_at']);?></td>				  
 				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
                 </tr>
+				
+				<?php } ?>              
                 
-                <tr>
-                  <td>3</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
+                
               </tbody>
                 
               </table>  	  

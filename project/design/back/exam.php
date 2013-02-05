@@ -38,8 +38,8 @@
 
     <div class="container">
 
-      <h1>Manage Exams</h1>
-      <p>From here you can manage exams of Online Examination System.</p>
+      <h1>Manage Exams of [Course Name]</h1>
+      <p>From here you can manage exams of [Course Name] under Online Examination System.</p>
 	  <br/>	  
 	  <h3 class="pull-left">Recent Exams <span style="font-size:14px;">(<a href="exam_add.php"> Add Exam </a>)</span></h3>
 	    
@@ -67,7 +67,7 @@
                   <td>5</td>
 				  <td>10 AM</td>
 				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Add Question</a> | <a href="#">View Questions</a> | <a href="#">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="question_add.php">Add Question</a> | <a href="question.php">View Questions</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
@@ -78,7 +78,7 @@
                   <td>5</td>
 				  <td>10 AM</td>
 				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Add Question</a> | <a href="#">View Questions</a> | <a href="#">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="question_add.php">Add Question</a> | <a href="question.php">View Questions</a> | <a href="#">Delete</a></td>
                 </tr>
                 
                 <tr>
@@ -89,7 +89,7 @@
                   <td>5</td>
 				  <td>10 AM</td>
 				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Add Question</a> | <a href="#">View Questions</a> | <a href="#">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="question_add.php">Add Question</a> | <a href="question.php">View Questions</a> | <a href="#">Delete</a></td>
                 </tr>
               </tbody>
                 
