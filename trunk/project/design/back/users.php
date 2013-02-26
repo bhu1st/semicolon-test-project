@@ -88,7 +88,7 @@
 				  <td><?php echo $row['phone'];?></td>
                   <td><?php echo $row['address'];?></td>
                   <td><?php echo date("Y-m-d", $row['created_at']);?></td>				  
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="#">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="users_edit.php?action=edit&id=<?php echo $row['id'];?>">Edit</a> | <a  onclick="return confirm('Are you sure you want to delete?')"  href="actions/users_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				
 				<?php } ?>              

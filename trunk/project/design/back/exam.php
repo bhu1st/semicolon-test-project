@@ -53,44 +53,41 @@
 				  <th>Full Marks</th>
 				  <th>Pass Marks</th>
 				  <th>Start Time</th>
+				  <th>End Time</th>
                   <th>Exam Date</th>
 				  <th>Actions</th>
                 </tr>
               </thead>
               
                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="question_add.php">Add Question</a> | <a href="question.php">View Questions</a> | <a href="#">Delete</a></td>
+               <?php
+					include "actions/connection.php";				
+					
+					$sql = "select * from exam";							
+				
+					$result = mysql_query($sql);				
+
+					while(($row = mysql_fetch_assoc($result))!=0)
+						{
+							$count++;				
+				
+				
+				?>
+				
+				<tr>
+                  <td><?php echo $count;?></td>
+                  <td><?php echo $row['name'];?></td>
+				  <td><?php echo $row['description'];?></td>
+				  <td><?php echo $row['full_marks'];?></td>
+				  <td><?php echo $row['pass_marks'];?></td>
+				  <td><?php echo $row['start_time'];?></td>
+				  <td><?php echo $row['end_time'];?></td>
+				  <td><?php echo $row['date'];?></td>date
+				  <td><a href="exam.php">Details</a> | <a href="exam_edit.php?id=<?php echo $row['id'];?>">Edit</a> | <a href="question_add.php">Add Question</a> |  <a href="question.php">View Questions</a> | <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/course_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
-                
-                <tr>
-                  <td>2</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="question_add.php">Add Question</a> | <a href="question.php">View Questions</a> | <a href="#">Delete</a></td>
-                </tr>
-                
-                <tr>
-                  <td>3</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>10</td>
-                  <td>5</td>
-				  <td>10 AM</td>
-				  <td></td>
-				  <td><a href="#">Details</a> | <a href="#">Edit</a> | <a href="question_add.php">Add Question</a> | <a href="question.php">View Questions</a> | <a href="#">Delete</a></td>
-                </tr>
+				
+				<?php } ?>                    
+			   
               </tbody>
                 
               </table>  	  

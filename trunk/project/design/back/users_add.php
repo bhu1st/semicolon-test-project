@@ -43,7 +43,7 @@
 	  
 	  
 	  <br/>  <br/>      
-	  <form class="form-horizontal" action="actions/users_add.php" method="POST">
+	  <form class="form-horizontal" action="actions/users.php" method="POST">
   <div class="control-group">
     <label class="control-label" for="username">Username</label>
     <div class="controls">
@@ -70,7 +70,7 @@
       <select name="usertype">
               <option value="1">Admin</option>
 			  <option value="2">Teacher</option>
-              <option value="3">Student</option>              
+              <option value="3" selected="selected">Student</option>              
        <select>
     </div>
   </div> 

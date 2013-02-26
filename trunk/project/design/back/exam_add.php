@@ -39,59 +39,83 @@
 
 	<h1>Add Exam</h1>
       <p>From here you can add exam of Online Examination System.</p>
-	  
-	  
-	  <br/>      <br/>      
-	  <form class="form-horizontal">
+	  <br/>      <br/>
+
+		<?php 	    
+					include "actions/connection.php";									
+					$sql = "select id, name from courses";											
+					$course = mysql_query($sql);
+					
+			?>      
+	  <form class="form-horizontal" action = "actions/exam_add.php" method = "POST">
 	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Exam Name</label>
+		<label class="control-label" for="examname">Exam Name</label>
 		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
+		  <input type="text" id="examname" name="examname"  placeholder="">
 		</div>
 	  </div>
 	 
 	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Exam Description</label>
+		<label class="control-label" for="description">Exam Description</label>
 		<div class="controls">
-		 <textarea rows="3"></textarea>
+		 <textarea rows="3" id="description" name="description"></textarea>
 		</div>
 	  </div>
   
   
 	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Full Mark</label>
+		<label class="control-label" for="full_marks">Full Mark</label>
 		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
+		  <input type="text" id="full_marks" name="full_marks" placeholder="">
 		</div>
 	  </div>
 	  
 	  
 	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Pass Mark</label>
+		<label class="control-label" for="pass_marks">Pass Mark</label>
 		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
+		  <input type="text" id="pass_marks" name="pass_marks" placeholder="">
 		</div>
 	  </div>
 	  
 	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Start Time</label>
+		<label class="control-label" for="start_time">Start Time</label>
 		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
+		  <input type="text" id="start_time" name="start_time" placeholder="">
+		</div>
+	  </div>
+	  
+	 <div class="control-group">
+		<label class="control-label" for="end_time">End Time</label>
+		<div class="controls">
+		  <input type="text" id="end_time" name="end_time" placeholder="">
 		</div>
 	  </div>
 	  
 	  <div class="control-group">
-		<label class="control-label" for="inputEmail">Exam Date</label>
+		<label class="control-label" for="date">Exam Date</label>
 		<div class="controls">
-		  <input type="text" id="inputEmail" placeholder="">
+		  <input type="text" id="date" name="date" placeholder="">
 		</div>
 	  </div>
 	  
-	  
+	  <div class="control-group">
+		<label class="control-label" for="course">Course Name</label>
+		<div class="controls">
+		  <select id="course" name="course">
+		  
+		  <option value="0" selected="selected" >-Select Course-</option><br>
+		  
+				   <?php while($courseres = mysql_fetch_assoc($course)){?>
+						  <option value="<?php echo $courseres['id']; ?>"><?php echo $courseres['name']; ?></option><br>
+                      <?php    }		?>	
+		  </select>
+		</div>
+	  </div>
 	  
 	  <div class="control-group">
 		<div class="controls">
-		  <input type="submit" class="btn btn-success" name="submit" value="Add User">
+		  <input type="submit" class="btn btn-success" name="submit" value="Add Exam">
 		</div>
 	  </div>
 	</form>
