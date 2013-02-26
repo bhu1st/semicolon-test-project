@@ -27,6 +27,7 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
+								   
   </head>
 
   <body>
@@ -56,15 +57,31 @@
               </thead>
               
                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>Ram lal Maherjan</td>
-				  
-				  <td><a href="exam.php">View Exams</a> | <a href="#">Edit</a> |  <a href="#">Delete</a></td>
+			   
+				
+				<?php
+					include "actions/connection.php";				
+					
+					$sql = "select * from courses";							
+				
+					$result = mysql_query($sql);				
+
+					while(($row = mysql_fetch_assoc($result))!=0)
+						{
+							$count++;				
+				
+				
+				?>
+				
+				<tr>
+                  <td><?php echo $count;?></td>
+                  <td><?php echo $row['name'];?></td>
+				  <td><?php echo $row['description'];?></td>
+				  <td><a href="exam.php">View Exams</a> | <a href="course_edit.php?id=<?php echo $row['id'];?>">Edit</a> |  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/course_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
-                
-                </tbody>
+				
+				<?php } ?>                    
+			    </tbody>
                 
               </table>
 	  

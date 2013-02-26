@@ -33,6 +33,8 @@
 
    <?php
 	   include "nav.php";  
+	   
+	   
   ?>		   
 		
 
@@ -41,29 +43,53 @@
       <h1>Add New Course</h1>
       <p>From here you can add courses of Online Examination System.</p>
 	  
-	    
 	  </br></br>
 	  
-	  <form class="form-horizontal" action="actions/courses_add.php" method="POST">
+	  <?php 
+	  
+	  $id = $_GET['id'];
+	   	   
+	   if ($id != ""){     
+		 
+					include "actions/connection.php";									
+					$sql = "select * from courses where `id`= $id";											
+					$result = mysql_query($sql);	
+					$course = mysql_fetch_assoc($result);				
+					
+		?>
+
+		
+		<form class="form-horizontal" action="actions/courses_add.php?action=update" method="POST">
+		  
+		   <input type="hidden" id="courseid" name="courseid" placeholder="" value="<?php echo $course['id']; ?>">
+		   
 		  <div class="control-group">
 			<label class="control-label" for="coursename">Course Name</label>
 			<div class="controls">
-			  <input type="text" id="coursename" name="coursename" placeholder="">
+			  <input type="text" id="coursename" name="coursename" placeholder="" value="<?php echo $course['name']; ?>">
 			</div>
 		  </div>
 		 
 		  <div class="control-group">
 			<label class="control-label" for="description">Course Description</label>
 			<div class="controls">
-			 <textarea rows="3" id="description" name="description"></textarea>
+			 <textarea rows="3" id="description" name="description"><?php echo $course['description']; ?></textarea>
 			</div>
 		  </div>
 		  <div class="control-group">
 			<div class="controls">
-			  <input type="submit" class="btn btn-success" name="submit" value="Add Course">
+			  <input type="submit" class="btn btn-success" name="submit" value="Update Course">
 			</div>
 		  </div>
 		</form>
+		
+		<?php } else {  ?>   
+	   	    No course available to edit.
+	   <?php }  ?>
+	    
+	  
+	  
+	  
 	</div> <!-- /container -->
 
     <!-- Le javascript
