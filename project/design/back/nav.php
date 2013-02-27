@@ -6,12 +6,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="index.php">Online Examination System</a>
+          <a class="brand" href="index.php?p=h">Online Examination System</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="index.php">Home</a></li>
-      	      <li><a href="users.php">Users</a></li>      
-			  <li><a href="course.php">Courses</a></li>			    
+				<?php $page = $_GET['p']; ?>
+              <li class="<?php if ($page == "h") echo 'active'; ?>" ><a href="index.php?p=h">Home</a></li>
+      	      <li class="<?php if ($page == "u") echo 'active'; ?>"><a href="users.php?p=u">Users</a></li>      
+			  <li class="<?php if ($page == "c") echo 'active'; ?>"><a href="course.php?p=c">Courses</a></li>			    		  	    
+			  
+			  
              </ul>
 			<form class="navbar-form pull-right">
   <input type="text" class="span2">
@@ -21,3 +24,4 @@
         </div>
       </div>
     </div>
+	

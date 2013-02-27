@@ -32,13 +32,12 @@ $id = $data['userid'];
 
 //server side validation of input data
 //build query
-$sql = "update `users` set `username` = \"$username\", `password` = \"$password\", `email` = \"$email\", `first_name`= \"$first_name\", `mid_name` = \"$mid_name\", `last_name` =\"$last_name\", `phone` = \"$phone\", `address` = \"$address\", `website` = \"$website\", `created_at` =\"$created_at\" , `user_type`= \"$user_type\");";
+ $sql = "update `users` set `username` = \"$username\", `password` = \"$password\", `email` = \"$email\", `first_name`= \"$first_name\", `mid_name` = \"$mid_name\", `last_name` =\"$last_name\", `phone` = \"$phone\", `address` = \"$address\", `website` = \"$website\", `created_at` =$created_at , `user_type`= $user_type where `id` = $id ;";
 } else { // insert date
 
 //build query
 $sql = "INSERT INTO `users` (`id`, `username`, `password`, `email`, `first_name`, `mid_name`, `last_name`, `phone`, `address`, `website`, `created_at`, `user_type`) VALUES (NULL, \"$username\", \"$password\", \"$email\", \"$first_name\", \"$mid_name\", \"$last_name\", \"$phone\", \"$address\", \"$website\", $created_at, $user_type);";
 }
-
 mysql_query	($sql);				
 header ("Location: ../users.php");
 

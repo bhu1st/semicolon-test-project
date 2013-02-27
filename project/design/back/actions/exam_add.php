@@ -12,8 +12,9 @@ echo "</pre>";
 $data= $_POST;
 
 $submit = $data['submit'];
-
-if ($submit) {
+$action = $_GET['action'];
+$id = $_GET['examid'];
+ $course_id_for_url = $_GET['course_id'];
  
 $name = $data['name'];
 $description = $data['description'];
@@ -26,16 +27,19 @@ $course_id = $data['course'];
 $created_at = time();
 
 //server side validation of input data
-
+if($action=="delete"){
+	$sql ="delete from `exam` where id=$id";
+}
+else{
 //build query
-$sql = "INSERT INTO `exam` (`id`, `name`, `description`, `full_marks`, `pass_marks`, `start_time`, `end_time`, `date`, `course_id`, `created_at`) 
-			        VALUES (NULL, \"$name\", \"$description\", \"$full_marks\", \"$pass_marks\", \"$start_time\", \"$end_time\", \"$date\", \"$course_id\", $created_at);";
+echo $sql = "INSERT INTO `exam` (`id`, `name`, `description`, `full_marks`, `pass_marks`, `start_time`, `end_time`, `date`, `course_id`, `created_at`) 
+			        VALUES (NULL, \"$name\", \"$description\", $full_marks, $pass_marks, $start_time, $end_time, $date,$course_id, $created_at);";
+}
+//mysql_query	($sql);				
 
-mysql_query	($sql);				
+//header ("Location: ../exam.php?id=$course_id_for_url");
 
-header ("Location: ../exam.php");
-
-}	
+	
 						
 			
 ?>

@@ -35,14 +35,28 @@
   ?>
 			   
 			   
-
+	  
     <div class="container">
+				<?php
+					include "actions/connection.php";	
+						
+					$courseid = $_GET['id'];
+					$course = "select * from `courses` where `id` = $courseid";
+					$coursename = mysql_query($course);
+					$coursename  = mysql_fetch_assoc($coursename);
 
-      <h1>Manage Exams of [Course Name]</h1>
-      <p>From here you can manage exams of [Course Name] under Online Examination System.</p>
+					?>
+      <h1>Manage Exams of <?php echo $coursename[name];?></h1>
+      <p>From here you can manage exams of <?php echo $coursename[name];?> under Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Exams <span style="font-size:14px;">(<a href="exam_add.php"> Add Exam </a>)</span></h3>
+	  <h3>Recent Exams <span style="font-size:14px;">(<a href="exam_add.php"> Add Exam </a>)</span></h3>
 	    
+		<?php
+					$sql = "select * from exam ";											
+					$result = mysql_query($sql);
+					//echo mysql_num_rows ($result);					
+					if (mysql_num_rows ($result) > 0 ) {
+				?>
 	  
 	  <table class="table table-hover">
               <thead>
@@ -61,12 +75,9 @@
               
                <tbody>
                <?php
-					include "actions/connection.php";				
-					
-					$sql = "select * from exam";							
-				
-					$result = mysql_query($sql);				
 
+				//echo mysql_num_rows($result);
+					//print_r (mysql_fetch-assoc($result));		
 					while(($row = mysql_fetch_assoc($result))!=0)
 						{
 							$count++;				
@@ -83,8 +94,13 @@
 				  <td><?php echo $row['start_time'];?></td>
 				  <td><?php echo $row['end_time'];?></td>
 				  <td><?php echo $row['date'];?></td>date
-				  <td><a href="exam.php">Details</a> | <a href="exam_edit.php?id=<?php echo $row['id'];?>">Edit</a> | <a href="question_add.php">Add Question</a> |  <a href="question.php">View Questions</a> | <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/course_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
+				  <td><a href="exam.php">Details</a> | <a href="exam_edit.php?id=<?php echo $row['id'];?>">Edit</a> | 
+				  <a href="question_add.php">Add Question</a> |  <a href="question.php">View Questions</a> |
+				  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&course_id=<?php echo $coursename['id']; ?>&examid=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
+				<input type="hidden" id="courseid" name="courseid" value="<?php echo $coursename['id']; ?>">
+				
+				
 				
 				<?php } ?>                    
 			   
@@ -92,6 +108,8 @@
                 
               </table>  	  
 
+	  
+	  
 	  
 	  <div class="pagination">
   <ul>
@@ -103,7 +121,10 @@
     <li><a href="#">Next</a></li>
   </ul>
 </div>
-	  	  
+	  	  <?php } else  { ?>
+			No exams found.
+		  <?php }  ?>
+		  
 
     </div> <!-- /container -->
 

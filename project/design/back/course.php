@@ -77,7 +77,7 @@
                   <td><?php echo $count;?></td>
                   <td><?php echo $row['name'];?></td>
 				  <td><?php echo $row['description'];?></td>
-				  <td><a href="exam.php">View Exams</a> | <a href="course_edit.php?id=<?php echo $row['id'];?>">Edit</a> |  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/course_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
+				  <td><a href="exam.php?id=<?php echo $row['id'];?>">View Exams</a> | <a href="course_edit.php?id=<?php echo $row['id'];?>">Edit</a> |  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/course_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				
 				<?php } ?>                    
