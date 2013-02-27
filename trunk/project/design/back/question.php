@@ -50,8 +50,8 @@
 				  <th>Question</th>
                   <th>Question Type</th>
 				  <th>Marks</th>
-				  <th>answer</th>
-				  <th>Remark</th>
+				   <th>Remark</th>
+				   <th>Actions</th>
 				  </tr>
               </thead>
               
@@ -70,16 +70,13 @@
 				
 				<tr>
                   <td><?php echo $count;?></td>
-                  <td><?php echo $row['name'];?></td>
-				  <td><?php echo $row['description'];?></td>
-				  <td><?php echo $row['full_marks'];?></td>
-				  <td><?php echo $row['pass_marks'];?></td>
-				  <td><?php echo $row['start_time'];?></td>
-				  <td><?php echo $row['end_time'];?></td>
-				  <td><?php echo $row['date'];?></td>date
-				  <td><a href="exam.php">Details</a> | <a href="exam_edit.php?id=<?php echo $row['id'];?>">Edit</a> | 
-				  <a href="question_add.php">Add Question</a> |  <a href="question.php">View Questions</a> |
-				  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&examid=<?php echo $row['id'];?>">Delete</a></td>
+                  <td><?php echo $row['question'];?></td>
+				  <td><?php echo $row['questiontype_id'];?></td>
+				  <td><?php echo $row['marks'];?></td>
+				  <td><?php echo $row['remark'];?></td>
+				  
+				  <td><a href="exam.php">Details</a> | <a href="question_edit.php?qid=<?php echo $row['id'];?>">Edit</a> | 
+				  <a href="question_add.php">Add Question</a> | <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&examid=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				<input type="hidden" id="courseid" name="courseid" value="<?php echo $coursename['id']; ?>">
 				<?php } ?>                    
