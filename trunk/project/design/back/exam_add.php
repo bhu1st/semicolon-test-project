@@ -49,9 +49,9 @@
 			?>      
 	  <form class="form-horizontal" action = "actions/exam_add.php" method = "POST">
 	  <div class="control-group">
-		<label class="control-label" for="examname">Exam Name</label>
+		<label class="control-label" for="name">Exam Name</label>
 		<div class="controls">
-		  <input type="text" id="examname" name="examname"  placeholder="">
+		  <input type="text" id="name" name="name"  placeholder="">
 		</div>
 	  </div>
 	 
