@@ -34,9 +34,13 @@
    <?php
 			   include "nav.php";
 			   include "actions/connection.php";
-			   
+			   $examid= $_GET['examid'];
+			   $sql = "SELECT * from exam where id = $examid";
+			   $exam = mysql_query($sql);
+			   $examres = mysql_fetch_assoc($exam);
 			   $sql="select * from question_type ";
 			   $result=mysql_query($sql);
+			   
   ?>
 			   
 			   
@@ -44,13 +48,13 @@
 
     <div class="container">
 
-      <h1>Add New Question</h1>
+      <h1>Add New Question to Exam of <?php echo $examres['name']?></h1>
       <p>From here you can add questions of Online Examination System.</p>
 	  
 	    
 	  </br></br>
 	  
-	  <form class="form-horizontal" action="actions/question_add.php" method="POST">
+	  <form class="form-horizontal" action="actions/question_add.php?examid=<?php echo $examres['id']?>" method="POST">
   <div class="control-group">
     <label class="control-label" for="question">Question</label>
     <div class="controls">

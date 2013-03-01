@@ -33,14 +33,19 @@
 
     <?php
 		include "nav.php";
+		include"actions/connection.php";
+		$examid = $_GET['examid'];
+		$sql = "select * from exam where id = $examid";											
+		$exam = mysql_query($sql);
+		$examresult = mysql_fetch_assoc($exam);
 	?>	
 
     <div class="container">
 
-      <h1>Manage Questions of [exam name]</h1>
-      <p>From here you can manage Questions of [exam name] under Online Examination System.</p>
+      <h1>Manage Questions of <?php  echo $examresult['name'];?> Exam</h1>
+      <p>From here you can manage Questions of <?php  echo $examresult['name'];?>Exam under Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="question_add.php"> Add Questions </a> | <a href="question_type.php">Questions Types</a>)</span></h3>
+	  <h3 class="pull-left">Recent Questions <span style="font-size:14px;">(<a href="question_add.php?examid=<?php  echo $examresult['id'];?>"> Add Questions </a> | <a href="question_type.php">Questions Types</a>)</span></h3>
 	    
 	  
 	  <table class="table table-hover">
@@ -48,6 +53,7 @@
                 <tr>
                   <th>#</th>
 				  <th>Question</th>
+  				  <th>Exam Name</th>
                   <th>Question Type</th>
 				  <th>Marks</th>
 				   <th>Remark</th>
@@ -57,9 +63,7 @@
               
                <tbody>
               <?php
-					include"actions/connection.php";
-					$sql = "select * from questions ";							
-				
+					$sql = "select * from questions where exam_id = $examid ";											
 					$result = mysql_query($sql);				
 					while(($row = mysql_fetch_assoc($result))!=0)
 						{
@@ -71,11 +75,19 @@
 				<tr>
                   <td><?php echo $count;?></td>
                   <td><?php echo $row['question'];?></td>
+				  <td><?php 
+						  $qid = $row['id'];
+						  $sql = "select exam.name from exam
+								  inner join questions on questions.exam_id = exam.id
+								  where exam_id = $examid ";											
+							$exam = mysql_query($sql);
+							$examres  = mysql_fetch_assoc($exam );										  
+						  echo $examres['name'];?></td>
 				  <td><?php echo $row['questiontype_id'];?></td>
 				  <td><?php echo $row['marks'];?></td>
 				  <td><?php echo $row['remark'];?></td>
 				  
-				  <td><a href="exam.php">Details</a> | <a href="question_edit.php?qid=<?php echo $row['id'];?>">Edit</a> | 
+				  <td><a href="exam.php">Details</a> | <a href="question_edit.php?qid=<?php echo $row['id'];?>&examid=<?php  echo $examresult['id'];?>">Edit</a> | 
 				  <a href="question_add.php">Add Question</a> | <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&examid=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				<input type="hidden" id="courseid" name="courseid" value="<?php echo $coursename['id']; ?>">

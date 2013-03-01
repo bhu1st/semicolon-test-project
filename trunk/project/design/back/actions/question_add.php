@@ -2,17 +2,18 @@
 include "connection.php";
 $data=$_POST;
 $submit = $data['submit'];
+$examid = $_GET['examid'];
 
 $question = $data['question'];
 $question_type = $data['question_type'];
 $marks = $data['marks'];
 $remark = $data['remark'];
 
- $sql = "INSERT INTO `questions` (`id`, `question`, `questiontype_id`, `marks`, `remark`) VALUES (NULL, \"$question\", \"$question_type\", \"$marks\", \"$remark\");";
+ $sql = "INSERT INTO `questions` (`id`, `question`,`exam_id` , `questiontype_id`, `marks`, `remark`) VALUES (NULL, \"$question\", $examid,\"$question_type\", \"$marks\", \"$remark\");";
 	
 	mysql_query($sql);
 	
-	header("location: ../question.php");
+	header("location: ../question.php?examid=$examid");
 						
 			
 ?>
