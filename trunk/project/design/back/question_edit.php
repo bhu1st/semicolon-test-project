@@ -44,18 +44,14 @@
 			   $qid= $_GET['qid'];
 			   $sql = "SELECT * from questions where id = $qid";
 			   $ques = mysql_query($sql);
-			   $question = mysql_fetch_assoc($ques)
-			   
+			   $question = mysql_fetch_assoc($ques);			   
 			   
   ?>         
 
     <div class="container">
 
-      <h1>Add New Question to Exam of <?php echo $examres['name'];?></h1>
-      <p>From here you can add questions of Online Examination System.</p>
-	  
-	    
-	  </br></br>
+      <h1>Update Question to Exam of <u> <?php echo $examres['name'];?></u></h1>
+      </br></br>
 	  
 	  <form class="form-horizontal" action="actions/question_add.php?examid=<?php echo $examres['id']?>" method="POST">
   <div class="control-group">
@@ -101,7 +97,8 @@
   </div>  
   <div class="control-group">
     <div class="controls">
-      <input type="submit" class="btn btn-success" name="submit" value="Add Question">
+      <input type="submit" class="btn btn-success" name="submit" value="update Question">
+	  <button class="btn btn-success" onclick="question.php" >Cancel</button>
     </div>
   </div>
 </form>
