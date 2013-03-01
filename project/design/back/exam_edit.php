@@ -36,29 +36,35 @@
 	?>	  
 
     <div class="container">
-
-	<h1>Add Exam</h1>
-      <p>From here you can add exam of Online Examination System.</p>
+		<?php 	    
+					include "actions/connection.php";
+					$courseid = $_GET['id'];
+					$examid = $_GET['examid'];					
+					$sql = "select id, name from courses where id = $courseid";											
+					$course = mysql_query($sql);
+					$courseres = mysql_fetch_assoc($course);
+					$sql = "select * from exam where id = $examid";											
+					$exam = mysql_query($sql);
+					$examres = mysql_fetch_assoc($exam);
+									
+			?>
+	<h1>Edit Exam for course <?php echo $courseres['name'];?></h1>
+      
 	  <br/>      <br/>
 
-		<?php 	    
-					include "actions/connection.php";									
-					$sql = "select id, name from courses";											
-					$course = mysql_query($sql);
-					
-			?>      
-	  <form class="form-horizontal" action = "actions/exam_add.php" method = "POST">
+		      
+	  <form class="form-horizontal" action = "actions/exam_add.php?examid=<?php echo $examres['id'];?>&course_id=<?php echo $courseres['id'];?>&action=update" method = "POST">
 	  <div class="control-group">
-		<label class="control-label" for="name">Exam Name</label>
+		<label class="control-label" for="name">Exam Name </label>
 		<div class="controls">
-		  <input type="text" id="name" name="name"  placeholder="">
+		  <input type="text" id="name" name="name"  value="<?php echo $examres['name'];?>">
 		</div>
 	  </div>
 	 
 	  <div class="control-group">
 		<label class="control-label" for="description">Exam Description</label>
 		<div class="controls">
-		 <textarea rows="3" id="description" name="description"></textarea>
+		 <textarea rows="3" id="description" name="description" value="<?php echo $examres['description'];?>"><?php echo $examres['description'];?>s</textarea>
 		</div>
 	  </div>
   
@@ -66,7 +72,7 @@
 	  <div class="control-group">
 		<label class="control-label" for="full_marks">Full Mark</label>
 		<div class="controls">
-		  <input type="text" id="full_marks" name="full_marks" placeholder="">
+		  <input type="text" id="full_marks" name="full_marks"value="<?php echo $examres['full_marks'];?>" placeholder="">
 		</div>
 	  </div>
 	  
@@ -74,28 +80,28 @@
 	  <div class="control-group">
 		<label class="control-label" for="pass_marks">Pass Mark</label>
 		<div class="controls">
-		  <input type="text" id="pass_marks" name="pass_marks" placeholder="">
+		  <input type="text" id="pass_marks" name="pass_marks" value="<?php echo $examres['pass_marks'];?>" placeholder="">
 		</div>
 	  </div>
 	  
 	  <div class="control-group">
 		<label class="control-label" for="start_time">Start Time</label>
 		<div class="controls">
-		  <input type="text" id="start_time" name="start_time" placeholder="">
+		  <input type="text" id="start_time" name="start_time" value="<?php echo $examres['start_time'];?>" placeholder="">
 		</div>
 	  </div>
 	  
 	 <div class="control-group">
 		<label class="control-label" for="end_time">End Time</label>
 		<div class="controls">
-		  <input type="text" id="end_time" name="end_time" placeholder="">
+		  <input type="text" id="end_time" name="end_time" value="<?php echo $examres['end_time'];?>" placeholder="">
 		</div>
 	  </div>
 	  
 	  <div class="control-group">
 		<label class="control-label" for="date">Exam Date</label>
 		<div class="controls">
-		  <input type="text" id="date" name="date" placeholder="">
+		  <input type="text" id="date" name="date" value="<?php echo $examres['date'];?>" placeholder="">
 		</div>
 	  </div>
 	  
@@ -103,19 +109,14 @@
 		<label class="control-label" for="course">Course Name</label>
 		<div class="controls">
 		  <select id="course" name="course">
-		  
-		  <option value="0" selected="selected" >-Select Course-</option><br>
-		  
-				   <?php while($courseres = mysql_fetch_assoc($course)){?>
-						  <option value="<?php echo $courseres['id']; ?>"><?php echo $courseres['name']; ?></option><br>
-                      <?php    }		?>	
+		     <option value="<?php echo $courseres['id']; ?>"><?php echo $courseres['name']; ?></option><br>                   
 		  </select>
 		</div>
 	  </div>
 	  
 	  <div class="control-group">
 		<div class="controls">
-		  <input type="submit" class="btn btn-success" name="submit" value="Add Exam">
+		  <input type="submit" class="btn btn-success" name="submit" value="update Exam">
 		</div>
 	  </div>
 	</form>

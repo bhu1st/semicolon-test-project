@@ -14,8 +14,8 @@ $data= $_POST;
 $submit = $data['submit'];
 $action = $_GET['action'];
 $id = $_GET['examid'];
- $course_id_for_url = $_GET['course_id'];
- 
+$course_id_for_url = $_GET['course_id'];
+ //echo $course_id_for_url ."sdafasdf";
 $name = $data['name'];
 $description = $data['description'];
 $full_marks = $data['full_marks'];
@@ -30,14 +30,19 @@ $created_at = time();
 if($action=="delete"){
 	$sql ="delete from `exam` where id=$id";
 }
+else if($action=="update"){
+ $sql = "UPDATE `exam` SET `name` = \"$name\", `description` = \"$description\", `full_marks` = \"$full_marks\", `pass_marks` = \"pass_marks\", `start_time` = \"$start_time\",
+	  `end_time` = \"$end_time\", `date` = \"$date\", `created_at` = \"$created_at\", `course_id` = \"$course_id\" WHERE `exam`.`id` = $id  LIMIT 1;";
+
+}
 else{
 //build query
-echo $sql = "INSERT INTO `exam` (`id`, `name`, `description`, `full_marks`, `pass_marks`, `start_time`, `end_time`, `date`, `course_id`, `created_at`) 
+ $sql = "INSERT INTO `exam` (`id`, `name`, `description`, `full_marks`, `pass_marks`, `start_time`, `end_time`, `date`, `course_id`, `created_at`) 
 			        VALUES (NULL, \"$name\", \"$description\", $full_marks, $pass_marks, $start_time, $end_time, $date,$course_id, $created_at);";
 }
-//mysql_query	($sql);				
+mysql_query	($sql);				
 
-//header ("Location: ../exam.php?id=$course_id_for_url");
+header ("Location: ../exam.php?id=$course_id_for_url");
 
 	
 						

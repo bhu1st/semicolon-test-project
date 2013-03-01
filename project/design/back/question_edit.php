@@ -34,27 +34,34 @@
    <?php
 			   include "nav.php";
 			   include "actions/connection.php";
-			   
+			   $examid= $_GET['examid'];
+			   $sql = "SELECT * from exam where id = $examid";
+			   $exam = mysql_query($sql);
+			   $examres = mysql_fetch_assoc($exam);
 			   $sql="select * from question_type ";
 			   $result=mysql_query($sql);
-  ?>
+			   
+			   $qid= $_GET['qid'];
+			   $sql = "SELECT * from questions where id = $qid";
+			   $ques = mysql_query($sql);
+			   $question = mysql_fetch_assoc($ques)
 			   
 			   
-         
+  ?>         
 
     <div class="container">
 
-      <h1>Add New Question</h1>
+      <h1>Add New Question to Exam of <?php echo $examres['name'];?></h1>
       <p>From here you can add questions of Online Examination System.</p>
 	  
 	    
 	  </br></br>
 	  
-	  <form class="form-horizontal" action="actions/question_add.php" method="POST">
+	  <form class="form-horizontal" action="actions/question_add.php?examid=<?php echo $examres['id']?>" method="POST">
   <div class="control-group">
     <label class="control-label" for="question">Question</label>
     <div class="controls">
-      <input type="text" id="question" name="question" placeholder="">
+      <input type="text" id="question" name="question"  value = "<?php echo $question['question']; ?>" placeholder="">
     </div>
   </div>
  
@@ -62,7 +69,15 @@
     <label class="control-label" for="question_type">Question Type</label>
     <div class="controls">
       <select id="question_type" name="question_type">
-	  <option value="">--select question type--</option>
+		<?php 
+		   $sql = "select question_type.name from question_type
+								  inner join questions on questions.questiontype_id = question_type.id
+								  where questions.id = $qid ";											
+							$qtype = mysql_query($sql);
+							$qtyperes  = mysql_fetch_assoc($qtype );										  
+						  ?>
+						  
+	  <option value="<?php echo $qtyperes['id']; ?>"><?php echo $qtyperes['name']; ?></option>
 	  <?php while($qtype = mysql_fetch_assoc($result)){?>
 	  <option value ="<?php echo $qtype['id']?>"><?php echo $qtype['name'] ?></option>
 	  <?php } ?>
@@ -74,19 +89,19 @@
   <div class="control-group">
     <label class="control-label" for="marks">Mark Carried</label>
     <div class="controls">
-      <input type="text" id="marks" name="marks" placeholder="">
+      <input type="text" id="marks" name="marks" value = "<?php echo $question['marks']; ?>" placeholder="">
     </div>
   </div>
   
 <div class="control-group">
     <label class="control-label" for="remark">Remark</label>
     <div class="controls">
-     <textarea rows="3" id="remark" name="remark"></textarea> 
+     <textarea rows="3" id="remark" name="remark" value = "<?php echo $question['remark']; ?>"><?php echo $question['remark']; ?></textarea> 
     </div>
   </div>  
   <div class="control-group">
     <div class="controls">
-      <input type="submit" class="btn btn-success" name="submit" value="Update Question">
+      <input type="submit" class="btn btn-success" name="submit" value="Add Question">
     </div>
   </div>
 </form>

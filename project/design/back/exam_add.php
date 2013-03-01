@@ -36,20 +36,22 @@
 	?>	  
 
     <div class="container">
-
-	<h1>Add Exam</h1>
+		<?php 	    
+					include "actions/connection.php";
+					$courseid = $_GET['id'];					
+					$sql = "select id, name from courses where id = $courseid";											
+					$course = mysql_query($sql);
+					$courseres = mysql_fetch_assoc($course);
+									
+			?>
+	<h1>Add Exam for course <?php echo $courseres['name'];?></h1>
       <p>From here you can add exam of Online Examination System.</p>
 	  <br/>      <br/>
 
-		<?php 	    
-					include "actions/connection.php";									
-					$sql = "select id, name from courses";											
-					$course = mysql_query($sql);
-					
-			?>      
-	  <form class="form-horizontal" action = "actions/exam_add.php" method = "POST">
+		      
+	  <form class="form-horizontal" action = "actions/exam_add.php?course_id=<?php echo $courseres['id'];?>" method = "POST">
 	  <div class="control-group">
-		<label class="control-label" for="name">Exam Name</label>
+		<label class="control-label" for="name">Exam Name </label>
 		<div class="controls">
 		  <input type="text" id="name" name="name"  placeholder="">
 		</div>
@@ -106,9 +108,8 @@
 		  
 		  <option value="0" selected="selected" >-Select Course-</option><br>
 		  
-				   <?php while($courseres = mysql_fetch_assoc($course)){?>
 						  <option value="<?php echo $courseres['id']; ?>"><?php echo $courseres['name']; ?></option><br>
-                      <?php    }		?>	
+                   
 		  </select>
 		</div>
 	  </div>

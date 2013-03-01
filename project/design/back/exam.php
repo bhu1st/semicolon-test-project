@@ -49,10 +49,10 @@
       <h1>Manage Exams of <?php echo $coursename[name];?></h1>
       <p>From here you can manage exams of <?php echo $coursename[name];?> under Online Examination System.</p>
 	  <br/>	  
-	  <h3>Recent Exams <span style="font-size:14px;">(<a href="exam_add.php"> Add Exam </a>)</span></h3>
+	  <h3>Recent Exams <span style="font-size:14px;">(<a href="exam_add.php?id=<?php echo $coursename['id']; ?>"> Add Exam </a>)</span></h3>
 	    
 		<?php
-					$sql = "select * from exam ";											
+					$sql = "select * from exam where course_id =  $courseid";											
 					$result = mysql_query($sql);
 					//echo mysql_num_rows ($result);					
 					if (mysql_num_rows ($result) > 0 ) {
@@ -94,8 +94,8 @@
 				  <td><?php echo $row['start_time'];?></td>
 				  <td><?php echo $row['end_time'];?></td>
 				  <td><?php echo $row['date'];?></td>date
-				  <td><a href="exam.php">Details</a> | <a href="exam_edit.php?id=<?php echo $row['id'];?>">Edit</a> | 
-				  <a href="question_add.php">Add Question</a> |  <a href="question.php">View Questions</a> |
+				  <td><a href="exam.php">Details</a> | <a href="exam_edit.php?id=<?php echo $coursename['id']; ?>&examid=<?php echo $row['id'];?>">Edit</a> | 
+				  <a href="question_add.php">Add Question</a> |  <a href="question.php?examid=<?php echo $row['id'];?>">View Questions</a> |
 				  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&course_id=<?php echo $coursename['id']; ?>&examid=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				<input type="hidden" id="courseid" name="courseid" value="<?php echo $coursename['id']; ?>">

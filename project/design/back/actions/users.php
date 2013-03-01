@@ -25,7 +25,27 @@ $address = $data['address'];
 $website = $data['website'];
 $created_at = time();
 
+function validation(){
+	
+	if($username == ""){
+	echo "Please enter athe user name";
+	break;
+	}
+	else if($username == ""){
+	echo "Please enter athe user name";
+	break;
+	}
+	else if($username == ""){
+	echo "Please enter athe user name";
+	break;
+	}
+	else if($username == ""){
+	echo "Please enter athe user name";
+	break;
+	}
+	
 
+}
 if ($action=="update") {
 
 $id = $data['userid'];
