@@ -95,7 +95,7 @@
 				  <td><?php echo $row['end_time'];?></td>
 				  <td><?php echo $row['date'];?></td>date
 				  <td><a href="exam.php">Details</a> | <a href="exam_edit.php?id=<?php echo $coursename['id']; ?>&examid=<?php echo $row['id'];?>">Edit</a> | 
-				  <a href="question_add.php">Add Question</a> |  <a href="question.php?examid=<?php echo $row['id'];?>">View Questions</a> |
+				  <a href="question_add.php?examid=<?php echo $row['id'];?>">Add Question</a> |  <a href="question.php?examid=<?php echo $row['id'];?>">View Questions</a> |
 				  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&course_id=<?php echo $coursename['id']; ?>&examid=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				<input type="hidden" id="courseid" name="courseid" value="<?php echo $coursename['id']; ?>">

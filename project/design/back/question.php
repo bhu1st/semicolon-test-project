@@ -88,7 +88,7 @@
 				  <td><?php echo $row['remark'];?></td>
 				  
 				  <td><a href="exam.php">Details</a> | <a href="question_edit.php?qid=<?php echo $row['id'];?>&examid=<?php  echo $examresult['id'];?>">Edit</a> | 
-				  <a href="question_add.php">Add Question</a> | <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&examid=<?php echo $row['id'];?>">Delete</a></td>
+				   <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/exam_add.php?action=delete&examid=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				<input type="hidden" id="courseid" name="courseid" value="<?php echo $coursename['id']; ?>">
 				<?php } ?>                    

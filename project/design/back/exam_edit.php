@@ -117,6 +117,7 @@
 	  <div class="control-group">
 		<div class="controls">
 		  <input type="submit" class="btn btn-success" name="submit" value="update Exam">
+		  <button class="btn btn-success" onclick="exam.php" >Cancel</button>
 		</div>
 	  </div>
 	</form>
