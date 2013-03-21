@@ -92,11 +92,6 @@
 			
 		}
 		
-		<script>
-  $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
-</script>
-
-		
 </script>
   </head>
 
@@ -114,23 +109,23 @@
 	  
 	  
 	  <br/>  <br/>      
-	  <form class="form-horizontal" action="actions/users.php" method="POST">
+	  <form class="form-horizontal" action="actions/users.php" method="POST" onsubmit="return validate(this);">
   <div class="control-group">
     <label class="control-label" for="username">Username</label>
     <div class="controls">
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" name="username" placeholder="">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="password">Password</label>
     <div class="controls">
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" placeholder="">
     </div>
   </div>
   <div class="control-group">
     <label class="control-label" for="email">Email</label>
     <div class="controls">
-      <input type="email" id="email"  name="email" required>
+      <input type="text" id="email"  name="email" placeholder="">
     </div>
   </div>
   
@@ -138,7 +133,7 @@
   <div class="control-group">
     <label class="control-label" for="usertype">User Type</label>
     <div class="controls">
-      <select name="usertype" required>
+      <select name="usertype">
               <option value="1">Admin</option>
 			  <option value="2">Teacher</option>
               <option value="3" selected="selected">Student</option>              
@@ -150,35 +145,35 @@
   <div class="control-group">
     <label class="control-label" for="firstname">First Name</label>
     <div class="controls">
-      <input type="text" id="firstname" name="firstname" required>
+      <input type="text" id="firstname" name="firstname" placeholder="">
     </div>
   </div>
   
     <div class="control-group">
     <label class="control-label" for="midname">Middle Name</label>
     <div class="controls">
-      <input type="text" id="midname" name="midname" required>
+      <input type="text" id="midname" name="midname" placeholder="">
     </div>
   </div>
   
   <div class="control-group">
     <label class="control-label" for="lastname">Last Name</label>
     <div class="controls">
-      <input type="text" id="lastname" name="lastname" required>
+      <input type="text" id="lastname" name="lastname" placeholder="">
     </div>
   </div>
   
   <div class="control-group">
     <label class="control-label" for="phone">Phone</label>
     <div class="controls">
-      <input type="text" id="phone" name="phone" required>
+      <input type="text" id="phone" name="phone" placeholder="">
     </div>
   </div>
   
   <div class="control-group">
     <label class="control-label" for="address">Address</label>
     <div class="controls">
-      <input type="text" id="address" name="address" required>
+      <input type="text" id="address" name="address" placeholder="">
     </div>
   </div>
   
@@ -186,7 +181,7 @@
   <div class="control-group">
     <label class="control-label" for="website">Website</label>
     <div class="controls">
-      <input type="text" id="website" name="website" required>
+      <input type="text" id="website" name="website" placeholder="">
     </div>
   </div>
   

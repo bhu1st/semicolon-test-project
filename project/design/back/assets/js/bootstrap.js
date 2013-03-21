@@ -2157,3 +2157,8 @@
 
 
 }(window.jQuery);
+
+
+function jsFunction(){
+	alert "hi";
+}

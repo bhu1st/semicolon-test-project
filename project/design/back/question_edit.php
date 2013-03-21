@@ -53,7 +53,7 @@
       <h1>Update Question to Exam of <u> <?php echo $examres['name'];?></u></h1>
       </br></br>
 	  
-	  <form class="form-horizontal" action="actions/question_add.php?examid=<?php echo $examres['id']?>" method="POST">
+	  <form class="form-horizontal" action="actions/question_add.php?examid=<?php echo $examres['id']?>&action=update" method="POST">
   <div class="control-group">
     <label class="control-label" for="question">Question</label>
     <div class="controls">
@@ -67,11 +67,11 @@
       <select id="question_type" name="question_type">
 		<?php 
 		   $sql = "select question_type.name from question_type
-								  inner join questions on questions.questiontype_id = question_type.id
-								  where questions.id = $qid ";											
-							$qtype = mysql_query($sql);
-							$qtyperes  = mysql_fetch_assoc($qtype );										  
-						  ?>
+					inner join questions on questions.questiontype_id = question_type.id
+					 where questions.id = $qid ";											
+					$qtype = mysql_query($sql);
+					$qtyperes  = mysql_fetch_assoc($qtype );										  
+					 ?>
 						  
 	  <option value="<?php echo $qtyperes['id']; ?>"><?php echo $qtyperes['name']; ?></option>
 	  <?php while($qtype = mysql_fetch_assoc($result)){?>
