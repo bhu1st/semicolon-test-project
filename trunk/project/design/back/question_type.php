@@ -38,7 +38,7 @@
       <h1>Manage Question Types</h1>
       <p>From here you can manage Questions Typesof Online Examination System.</p>
 	  <br/>	  
-	  <h3 class="pull-left">Available Question Types<span style="font-size:14px;"></span></h3>
+	  <h3 class="pull-left">Available Question Types (<a href ="questype_add.php"> ADD Question type </a>)<span style="font-size:14px;"></span></h3>
 	    
 	  
 	  <table class="table table-hover">
