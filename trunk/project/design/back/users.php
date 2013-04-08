@@ -1,6 +1,11 @@
+<?php 
+session_start();
+if (!$_SESSION['login']) header("location: index.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="utf-8">
     <title>Online Examination System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +14,13 @@
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	
+	
+	
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -27,8 +39,8 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
+								   
   </head>
-
   <body>
 
     <?php
@@ -47,11 +59,13 @@
               <thead>
                 <tr>
                   <th>#</th>
+                  <th>Picture</th>
                   <th>Username</th>
 				  <th>Email</th>
 				  <th>Full Name</th>
 				  <th>Phone</th>
                   <th>User Type</th>
+                  <th>Created at</th>
 				  <th>Actions</th>
                 </tr>
               </thead>
@@ -83,12 +97,29 @@
 				
 				<tr>
                   <td><?php echo $count;?></td>
+                  <td>				  
+					
+					<?php if ($row['picture']) {?>
+					
+					<a id="lightbox" href="<?php echo "uploads/". $row['picture'];?>" >
+						<img width="80" height="80" src="<?php echo "uploads/". $row['picture'];?>" />
+					</a>
+					
+					<?php }  else { ?>
+					
+						<img width="80" height="80" src="<?php echo "uploads/default.gif";?>" />
+					
+					<?php } ?>
+					
+				  
+				  </td>
                   <td><?php echo $row['username'];?></td>
 				  <td><?php echo $row['email'];?></td>
 				  <td><?php echo $row['phone'];?></td>
                   <td><?php echo $row['address'];?></td>
+				  <td><?php echo $row['user_type'];?></td>				  
                   <td><?php echo date("Y-m-d", $row['created_at']);?></td>				  
-				  <td><a href="#">Details</a> | <a href="users_edit.php?action=edit&id=<?php echo $row['id'];?>">Edit</a> | <a  onclick="return confirm('Are you sure you want to delete?')"  href="actions/users_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
+				  <td><a href="#">Details</a> | <a href="users_edit.php?id=<?php echo $row['id'];?>">Edit</a> | <a  onclick="return confirm('Are you sure you want to delete?')"  href="actions/users_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				
 				<?php } ?>              
@@ -116,7 +147,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
+    
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
     <script src="assets/js/bootstrap-modal.js"></script>

@@ -9,6 +9,13 @@
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	
+	
+	
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -77,7 +84,7 @@
                   <td><?php echo $count;?></td>
                   <td><?php echo $row['name'];?></td>
 				  <td><?php echo $row['description'];?></td>
-				  <td><a href="exam.php?id=<?php echo $row['id'];?>">View Exams</a> | <a href="course_edit.php?id=<?php echo $row['id'];?>">Edit</a> |  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/course_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
+				  <td><a href="exam.php?id=<?php echo $row['id'];?>">View Exams</a> | <a class="lightbox" href="course_edit.php?id=<?php echo $row['id'];?>">Edit</a> |  <a onclick="return confirm('Are you sure you want to delete?')"  href="actions/course_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
                 </tr>
 				
 				<?php } ?>                    
@@ -102,7 +109,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
+    
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
     <script src="assets/js/bootstrap-modal.js"></script>

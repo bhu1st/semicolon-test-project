@@ -11,6 +11,9 @@
                 <a href="./index.php">Users</a>
               </li>
               <li class="">
+                <a href="./usertypes.php">User Types</a>
+              </li>              
+              <li class="">
                 <a href="./courses.php">Courses</a>
               </li>
               <li class="">
@@ -18,6 +21,9 @@
               </li>
               <li class="">
                 <a href="./questions.php">Questions</a>
+              </li>
+              <li class="">
+                <a href="./questiontype.php">Question Type</a>
               </li>
               <li class="">
                 <a href="./answers.php">Answers</a>

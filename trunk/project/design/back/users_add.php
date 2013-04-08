@@ -1,3 +1,6 @@
+<?php
+	include "actions/users.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -92,13 +95,11 @@
 			
 		}
 		
-		<script>
-  $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+ //$(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
 </script>
 
-		
-</script>
-  </head>
+
+	</head>
 
   <body>
 
@@ -114,71 +115,103 @@
 	  
 	  
 	  <br/>  <br/>      
-	  <form class="form-horizontal" action="actions/users.php" method="POST">
-  <div class="control-group">
+	  <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data" >
+  <div class="control-group <?php if (isset($username_error)) echo "error"; ?> ">
     <label class="control-label" for="username">Username</label>
     <div class="controls">
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" name="username"  value="<?php if (isset($username)) echo $username; ?>" required>
+	  
+	  <?php if (isset($username_error)) { ?>
+		<span class="help-inline"><?php echo $username_error; ?></span>
+	  <?php } ?>	
     </div>
   </div>
-  <div class="control-group">
+  <div class="control-group <?php if (isset($password_error)) echo "error"; ?> ">
     <label class="control-label" for="password">Password</label>
     <div class="controls">
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password"  value="<?php if (isset($password)) echo $password; ?>" required>
+	  
+	  <?php if (isset($password_error)) { ?>
+		<span class="help-inline"><?php echo $password_error; ?></span>
+	  <?php } ?>	
     </div>
   </div>
-  <div class="control-group">
+  <div class="control-group <?php if (isset($email_error)) echo "error"; ?> ">
     <label class="control-label" for="email">Email</label>
     <div class="controls">
-      <input type="email" id="email"  name="email" required>
+      <input type="email" id="email"  name="email"  value="<?php if (isset($email)) echo $email; ?>" required>
+	  
+	  <?php if (isset($email_error)) { ?>
+		<span class="help-inline"><?php echo $email_error; ?></span>
+	  <?php } ?>	
     </div>
   </div>
   
   
-  <div class="control-group">
+  <div class="control-group <?php if (isset($usertype_error)) echo "error"; ?> ">
     <label class="control-label" for="usertype">User Type</label>
     <div class="controls">
-      <select name="usertype" required>
+      <select name="usertype"  value="<?php if (isset($usertype)) echo $usertype; ?>" required>
               <option value="1">Admin</option>
 			  <option value="2">Teacher</option>
               <option value="3" selected="selected">Student</option>              
        <select>
+	   
+	  <?php if (isset($usertype_error)) { ?>
+		<span class="help-inline"><?php echo $usertype_error; ?></span>
+	  <?php } ?>	
     </div>
   </div> 
 			
   
-  <div class="control-group">
+  <div class="control-group <?php if (isset($firstname_error)) echo "error"; ?> ">
     <label class="control-label" for="firstname">First Name</label>
     <div class="controls">
-      <input type="text" id="firstname" name="firstname" required>
+      <input type="text" id="firstname" name="firstname"  value="<?php if (isset($firstname)) echo $firstname; ?>" required>
+	  
+	  <?php if (isset($firstname_error)) { ?>
+		<span class="help-inline"><?php echo $firstname_error; ?></span>
+	  <?php } ?>	
     </div>
   </div>
   
     <div class="control-group">
     <label class="control-label" for="midname">Middle Name</label>
     <div class="controls">
-      <input type="text" id="midname" name="midname" required>
+      <input type="text" id="midname" name="midname"  value="<?php if (isset($midname)) echo $midname; ?>">
     </div>
   </div>
   
-  <div class="control-group">
+  <div class="control-group <?php if (isset($lastname_error)) echo "error"; ?> ">
     <label class="control-label" for="lastname">Last Name</label>
     <div class="controls">
-      <input type="text" id="lastname" name="lastname" required>
+      <input type="text" id="lastname" name="lastname"  value="<?php if (isset($lastname)) echo $lastname; ?>" required>
+	  
+	  <?php if (isset($lastname_error)) { ?>
+		<span class="help-inline"><?php echo $lastname_error; ?></span>
+	  <?php } ?>	
     </div>
   </div>
   
-  <div class="control-group">
+  <div class="control-group <?php if (isset($phone_error)) echo "error"; ?> ">
     <label class="control-label" for="phone">Phone</label>
     <div class="controls">
-      <input type="text" id="phone" name="phone" required>
+      <input type="text" id="phone" name="phone"  value="<?php if (isset($phone)) echo $phone; ?>" required>
+	  
+	  <?php if (isset($phone_error)) { ?>
+		<span class="help-inline"><?php echo $phone_error; ?></span>
+	  <?php } ?>	
     </div>
   </div>
   
-  <div class="control-group">
+  <div class="control-group <?php if (isset($address_error)) echo "error"; ?> ">
     <label class="control-label" for="address">Address</label>
     <div class="controls">
-      <input type="text" id="address" name="address" required>
+      <input type="text" id="address" name="address" value="<?php if (isset($address)) echo $address; ?>"  >
+	  
+	  <?php if (isset($address_error)) { ?>
+		<span class="help-inline"><?php echo $address_error; ?></span>
+	  <?php } ?>		    
     </div>
   </div>
   
@@ -186,7 +219,14 @@
   <div class="control-group">
     <label class="control-label" for="website">Website</label>
     <div class="controls">
-      <input type="text" id="website" name="website" required>
+      <input type="text" id="website" name="website" value="<?php if (isset($website)) echo $website; ?>" >
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="website">Profile Picture</label>
+    <div class="controls">
+      <input type="file" id="picture" name="picture" value="<?php if (isset($picture)) echo $picture; ?>" >
     </div>
   </div>
   
@@ -219,8 +259,9 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
-	
-    <script src="assets/js/jqBootstrapValidation.js"></script>
+	<?php
+    //<script src="assets/js/jqBootstrapValidation.js"></script>
+	?>
 	
 	
   </body>

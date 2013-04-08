@@ -1,18 +1,85 @@
+<?php 
+session_start();
+ 
+$email = addslashes($_POST['email']);
+$password = addslashes($_POST['password'];
+
+//$email = $_POST['email'];
+//$password = $_POST['password'];
+
+
+
+if ($email !="" && $password != "") {
+
+$password = md5($password);
+
+include "actions/connection.php";
+
+$sql = "select * from `users` where `email` = '$email' and `password` = '$password'";
+
+//$sql = "select * from `users` where `email` = ' ' and `password` = '$password'";
+
+
+$res = mysql_query ($sql);
+
+if (mysql_num_rows($res) == 1){
+  //echo "login success"; 
+  $_SESSION['login'] = 1;
+  $_SESSION['email'] = $email;
+  header ("location: users.php");
+
+}else {
+  echo "invalid username or password!";
+}
+
+} else {
+echo "Please provide username and password !";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Online Examination System</title>
+    <title>Sign in &middot; Twitter Bootstrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <style>
+    <style type="text/css">
       body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
       }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -22,155 +89,45 @@
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
 
   <body>
-  
-  
-  <?php
-			   include "nav.php";
-			   ?>
-<!--
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="index.php">Online Examination System</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="index.php">Home</a></li>
-      	      <li><a href="users.php">Users</a></li>      
-			  <li><a href="course.php">Courses</a></li>			    
-			  <li><a href="exam.php">Exams</a></li>
-			  <li><a href="question.php">Questions</a></li>
-			  <li><a href="answer.php">Answers</a></li>
-
-             </ul>
-			<form class="navbar-form pull-right">
-  <input type="text" class="span2">
-  <button type="submit" class="btn">Submit</button>
-</form>
-
-          </div><!--/.nav-collapse
-        </div>
-      </div>
-    </div>-->
 
     <div class="container">
 
-      <h1>Welcome, Admin</h1>
-      <p>From the administration section you can manage all aspects of Online Examination System.</p>
-	  <br/>	  
-	  <h3 class="pull-left">Recent Users <span style="font-size:14px;">(<a href="users.php"> View all </a> | <a href="users_add.php"> Add Users </a>)</span></h3>
-	    
-	  
-	  
-	  
-	  <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Fullname</th>
-				  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Address</th>
-				  <th>Created on</th>
-				  <th>Actions</th>
-                </tr>
-              </thead>
-              
-               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                
-                <tr>
-                  <td>2</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                
-                <tr>
-                  <td>3</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                
-                <tr>
-                  <td>4</td>
-                  <td>Ram lal Maherjan</td>
-				  <td>ram@yahoo.com</td>
-                  <td>9841556644</td>
-                  <td>Newroad,kathmandu</td>
-				  <td>25 jan, 2012</td>
-				  <td><a href="#">Edit</a> | <a href="#">Delete</a> | <a href="#">Activate</a> </td>
-                </tr>
-                </tbody>
-                
-              </table>
-	  
-	  
-	  <div class="row">
-        <div class="span4">
-          <h4>Manage Exams</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details</a></p>
-        </div>
-        <div class="span4">
-          <h4>Manage Courses</h4>
-          <p>Donec id  elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details</a></p>
-       </div>
-        <div class="span4">
-          <h4>Manage Questions</h4>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details </a></p>
-        </div>
-      </div>
-
-	  
+      <form class="form-signin" action="" method="POST">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        Email: <br/> <input type="text" class="input-block-level" name="email">
+        Password: <br/> <input type="password" class="input-block-level" name="password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+      </form>
 
     </div> <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
 
   </body>
 </html>

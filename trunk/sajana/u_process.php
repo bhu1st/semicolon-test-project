@@ -21,7 +21,6 @@ $con = mysql_connect('localhost', 'root', '');
 					
 				} 
 				else{
-				
 				mysql_select_db("utrack", $con);
 				$sel_university= $_POST["university"];
 				$sel_campus = $_POST["campus"];
