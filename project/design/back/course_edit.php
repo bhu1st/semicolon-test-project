@@ -1,3 +1,24 @@
+<?php
+ include "actions/courses_add.php";
+	  
+ $id = $_GET['id'];
+	
+ if (!$id) header("location: course.php");
+ 
+ if ( $id != "" && ! $_POST['submit'] ){     
+		 
+					include "actions/connection.php";									
+					$sql = "select * from courses where `id`= $id";											
+					$result = mysql_query($sql);	
+					$course = mysql_fetch_assoc($result);	
+					
+  }
+  
+  
+		
+?>
+		
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,35 +66,31 @@
 	  
 	  </br></br>
 	  
-	  <?php 
-	  
-	  $id = $_GET['id'];
-	   	   
-	   if ($id != ""){     
-		 
-					include "actions/connection.php";									
-					$sql = "select * from courses where `id`= $id";											
-					$result = mysql_query($sql);	
-					$course = mysql_fetch_assoc($result);				
-					
-		?>
+	 
 
 		
-		<form class="form-horizontal" action="actions/courses_add.php?action=update" method="POST">
+		<form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'];?>?action=update&id=<?php echo $course['id']; ?>" method="POST">
 		  
 		   <input type="hidden" id="courseid" name="courseid" placeholder="" value="<?php echo $course['id']; ?>">
 		   
-		  <div class="control-group">
+		  <div class="control-group <?php if(isset($coursename_error)) echo "error";?>">
 			<label class="control-label" for="coursename">Course Name</label>
 			<div class="controls">
-			  <input type="text" id="coursename" name="coursename" placeholder="" value="<?php echo $course['name']; ?>">
+			  <input type="text" id="coursename" name="coursename" placeholder="" value="<?php echo isset($coursename) ? $coursename : $course['name']; ?>">
+			
+			<?php if (isset($coursename_error)) { ?>
+				<span class="help-inline"><?php echo $coursename_error; ?></span>
+			<?php } ?>
+			
 			</div>
 		  </div>
-		 
-		  <div class="control-group">
+		   <div class="control-group <?php if(isset($description_error)) echo "error"?>">		
 			<label class="control-label" for="description">Course Description</label>
 			<div class="controls">
-			 <textarea rows="3" id="description" name="description"><?php echo $course['description']; ?></textarea>
+			 <textarea rows="3" id="description" name="description"><?php if(isset($description)) echo $description; else echo $course['description']; ?></textarea>
+			 <?php if (isset($description_error)) { ?>
+				<span class="help-inline"><?php echo $description_error; ?></span>
+			  <?php } ?> 
 			</div>
 		  </div>
 		  <div class="control-group">
@@ -83,10 +100,7 @@
 		  </div>
 		</form>
 		
-		<?php } else {  ?>   
-	   	    No course available to edit.
-	   <?php }  ?>
-	    
+		
 	  
 	  
 	  

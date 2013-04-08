@@ -1,3 +1,7 @@
+<?php
+ include "actions/courses_add.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +12,13 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
+	
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+	
+	<script src="third_party/ckeditor/ckeditor.js"></script>
+	<link rel="stylesheet" href="third_party/ckeditor/sample.css">
+	
+	
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -44,18 +54,26 @@
 	    
 	  </br></br>
 	  
-	  <form class="form-horizontal" action="actions/courses_add.php" method="POST">
-		  <div class="control-group">
+	  <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+		 
+		 <div class="control-group <?php if(isset($coursename_error)) echo "error";?>">
 			<label class="control-label" for="coursename">Course Name</label>
 			<div class="controls">
-			  <input type="text" id="coursename" name="coursename" placeholder="">
+			  <input type="text" id="coursename" name="coursename" value="<?php if (isset($coursename)) echo $coursename; ?>">
+			  <?php if (isset($coursename_error)) { ?>
+				<span class="help-inline"><?php echo $coursename_error; ?></span>
+			  <?php } ?>
+			
 			</div>
 		  </div>
 		 
-		  <div class="control-group">
+		  <div class="control-group <?php if(isset($description_error)) echo "error"?>">
 			<label class="control-label" for="description">Course Description</label>
 			<div class="controls">
-			 <textarea rows="3" id="description" name="description"></textarea>
+			 <textarea class="ckeditor" rows="10" id="description" name="description" ><?php if(isset($description)) echo $description;?></textarea>
+			 <?php if (isset($description_error)) { ?>
+				<span class="help-inline"><?php echo $description_error; ?></span>
+			  <?php } ?>
 			</div>
 		  </div>
 		  <div class="control-group">

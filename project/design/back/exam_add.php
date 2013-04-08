@@ -1,3 +1,6 @@
+<?php
+	include "actions/exam_add.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,10 +41,12 @@
     <div class="container">
 		<?php 	    
 					include "actions/connection.php";
-					$courseid = $_GET['id'];					
+					$courseid = $_GET['id'];
+					if($courseid != ""){	
 					$sql = "select id, name from courses where id = $courseid";											
 					$course = mysql_query($sql);
 					$courseres = mysql_fetch_assoc($course);
+					}
 									
 			?>
 	<h1>Add Exam for course <?php echo $courseres['name'];?></h1>
@@ -49,67 +54,82 @@
 	  <br/>      <br/>
 
 		      
-	  <form class="form-horizontal" action = "actions/exam_add.php?course_id=<?php echo $courseres['id'];?>" method = "POST">
-	  <div class="control-group">
+	  <form class="form-horizontal" action = "<?php echo $_SERVER['PHP_SELF'];?>?id=<?php echo $courseres['id'];?>" method = "POST">
+	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?> ">
 		<label class="control-label" for="name">Exam Name </label>
 		<div class="controls">
-		  <input type="text" id="name" name="name"  placeholder="">
+		  <input type="text" id="name" name="name"  value="<?php if (isset($name)) echo $name; ?>">
+	
+		<?php if (isset($name_error)) { ?>
+			<span class="help-inline"><?php echo $name_error; ?></span>
+		<?php } ?>
 		</div>
 	  </div>
 	 
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($description_error)) echo "error"; ?>">
 		<label class="control-label" for="description">Exam Description</label>
 		<div class="controls">
-		 <textarea rows="3" id="description" name="description"></textarea>
+		 <textarea rows="3" id="description" name="description"><?php if (isset($description)) echo $description; ?></textarea>
+		<?php if (isset($description_error)) { ?>
+			<span class="help-inline"><?php echo $description_error; ?></span>
+	    <?php } ?>
 		</div>
 	  </div>
   
   
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
 		<label class="control-label" for="full_marks">Full Mark</label>
 		<div class="controls">
-		  <input type="text" id="full_marks" name="full_marks" placeholder="">
+		  <input type="text" id="full_marks" name="full_marks"  value="<?php if (isset($name)) echo $name; ?>">
 		</div>
 	  </div>
 	  
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
 		<label class="control-label" for="pass_marks">Pass Mark</label>
 		<div class="controls">
-		  <input type="text" id="pass_marks" name="pass_marks" placeholder="">
+		  <input type="text" id="pass_marks" name="pass_marks"  value="<?php if (isset($name)) echo $name; ?>">
 		</div>
 	  </div>
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
 		<label class="control-label" for="start_time">Start Time</label>
 		<div class="controls">
-		  <input type="text" id="start_time" name="start_time" placeholder="">
+		  <input type="text" id="start_time" name="start_time"  value="<?php if (isset($name)) echo $name; ?>">
 		</div>
 	  </div>
 	  
-	 <div class="control-group">
+	 <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
 		<label class="control-label" for="end_time">End Time</label>
 		<div class="controls">
-		  <input type="text" id="end_time" name="end_time" placeholder="">
+		  <input type="text" id="end_time" name="end_time"  value="<?php if (isset($name)) echo $name; ?>">
 		</div>
 	  </div>
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
 		<label class="control-label" for="date">Exam Date</label>
 		<div class="controls">
-		  <input type="text" id="date" name="date" placeholder="">
+		  <input type="text" id="date" name="date"  value="<?php if (isset($name)) echo $name; ?>">
 		</div>
 	  </div>
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($name_error)) echo "error"; ?>">
 		<label class="control-label" for="course">Course Name</label>
 		<div class="controls">
-		  <select id="course" name="course">
+		  <select id="course" name="course"  value="<?php if (isset($name)) echo $name; ?>">
 		  
 		  <option value="0" selected="selected" >-Select Course-</option><br>
+		  <?php
 		  
-						  <option value="<?php echo $courseres['id']; ?>"><?php echo $courseres['name']; ?></option><br>
-                   
+					$sql = "select * from courses";											
+					$course = mysql_query($sql);
+					//$courseres = mysql_fetch_assoc($course);
+					
+					while(($courseres = mysql_fetch_assoc($course))!=0){
+		  
+		  ?>
+						  <option <?php if($courseid  == $courseres['id']) echo "selected='selected'";?> value="<?php echo $courseres['id']; ?>"><?php echo $courseres['name']; ?></option><br>
+                <?php } ?>   
 		  </select>
 		</div>
 	  </div>

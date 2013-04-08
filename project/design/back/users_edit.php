@@ -1,3 +1,6 @@
+<?php
+			   include "actions/users.php";
+			?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,6 +30,9 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="assets/ico/favicon.png">
+									
+			
+								
   </head>
 
   <body>
@@ -55,71 +61,100 @@
 					
 		?>
 		
-		  <form class="form-horizontal" action="actions/users.php?action=update" method="POST">
-		  <input type="hidden" id="userid" name="userid" placeholder="" value="<?php echo $users['id']; ?>">
-	  <div class="control-group">
+		  <form enctype="multipart/form-data" class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'];?>?action=update&id=<?php echo $users['id'];?>" method="POST">
+		  <input type="hidden" id="userid" name="userid"  value="<?php echo $users['id']; ?>" >
+	  <div class="control-group <?php if (isset($username_error)) echo "error"; ?> ">
 		<label class="control-label" for="username">Username</label>
 		<div class="controls">
-		  <input type="text" id="username" name="username" value ="<?php echo $users['username']; ?>" placeholder="">
+		  <input type="text" id="username" name="username" value ="<?php if (isset($username)) echo $username; else echo $users['username']; ?>" required>
+	 
+	 <?php if (isset($username_error)) { ?>
+		<span class="help-inline"><?php echo $username_error; ?></span>
+	  <?php } ?>
 		</div>
 	  </div>
-	  <div class="control-group">
+	  
+	  <div class="control-group <?php if (isset($password_error)) echo "error"; ?>">
 		<label class="control-label" for="password">Password</label>
 		<div class="controls">
-		  <input type="password" id="password" name="password" value ="<?php echo $users['password']; ?>" placeholder="">
+		  <input type="password" id="password" name="password" value ="<?php if (isset($password)) echo $password; else echo $users['password']; ?>" required>
+		  <?php if (isset($password_error)) { ?>
+		<span class="help-inline"><?php echo $password_error; ?></span>
+	  <?php } ?>
 		</div>
 	  </div>
-	  <div class="control-group">
+	  
+	  <div class="control-group <?php if (isset($email_error)) echo "error"; ?> ">
 		<label class="control-label" for="email">Email</label>
 		<div class="controls">
-		  <input type="text" id="email"  name="email" value ="<?php echo $users['email']; ?>" placeholder="">
+		  <input type="text" id="email"  name="email" value ="<?php if (isset($email)) echo $email; else echo $users['email']; ?>" required>
+		
+		 <?php if (isset($email_error)) { ?>
+		<span class="help-inline"><?php echo $email_error; ?></span>
+		<?php } ?>
 		</div>
 	  </div>
 	  
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($usertype_error)) echo "error"; ?>">
 		<label class="control-label" for="usertype">User Type</label>
 		<div class="controls">
-		  <select name="usertype">
-				  <option value="1"><?php echo $users['user_type']; ?></option>
-						  
+		  <select name="usertype"  required>
+				  <option value="1"><?php if (isset($usertype)) echo $usertype; else echo $users['user_type']; ?></option>
+				  						  
 		   <select>
+		    
+	  <?php if (isset($usertype_error)) { ?>
+		<span class="help-inline"><?php echo $usertype_error; ?></span>
+	  <?php } ?>
 		</div>
 	  </div> 
 				
 	  
-	  <div class="control-group">
-		<label class="control-label" for="firstname">First Name</label>
+	  <div class="control-group <?php if (isset($firstname_error)) echo "error"; ?>">
+		<label class="control-label" for="firstname" >First Name</label>
 		<div class="controls">
-		  <input type="text" id="firstname" name="firstname" value ="<?php echo $users['first_name']; ?>" placeholder="">
+		  <input type="text" id="firstname" name="firstname" value ="<?php if (isset($firstname)) echo $firstname; else echo $users['first_name']; ?>" required>
+		<?php if (isset($firstname_error)) { ?>
+		<span class="help-inline"><?php echo $firstname_error; ?></span>
+	  <?php } ?>	
 		</div>
 	  </div>
 	  
 		<div class="control-group">
 		<label class="control-label" for="midname">Middle Name</label>
 		<div class="controls">
-		  <input type="text" id="midname" name="midname" value ="<?php echo $users['mid_name']; ?>" placeholder="">
+		  <input type="text" id="midname" name="midname" value ="<?php if (isset($midname)) echo $midname; else echo $users['mid_name']; ?>" >
 		</div>
 	  </div>
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($lastname_error)) echo "error"; ?> ">
 		<label class="control-label" for="lastname">Last Name</label>
 		<div class="controls">
-		  <input type="text" id="lastname" name="lastname" value ="<?php echo $users['last_name']; ?>" placeholder="">
+		  <input type="text" id="lastname" name="lastname" value ="<?php if (isset($lastname)) echo $lastname; else echo $users['last_name']; ?>" required>
+		  <?php if (isset($lastname_error)) { ?>
+		<span class="help-inline"><?php echo $lastname_error; ?></span>
+	  <?php } ?>	
 		</div>
 	  </div>
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($phone_error)) echo "error"; ?>">
 		<label class="control-label" for="phone">Phone</label>
 		<div class="controls">
-		  <input type="text" id="phone" name="phone" value ="<?php echo $users['phone']; ?>" placeholder="">
+		  <input type="text" id="phone" name="phone" value ="<?php if (isset($phone)) echo $phone;  else echo $users['phone']; ?>" required>
+		   <?php if (isset($phone_error)) { ?>
+			<span class="help-inline"><?php echo $phone_error; ?></span>
+			<?php } ?>	
 		</div>
 	  </div>
 	  
-	  <div class="control-group">
+	  <div class="control-group <?php if (isset($address_error)) echo "error"; ?>">
 		<label class="control-label" for="address">Address</label>
 		<div class="controls">
-		  <input type="text" id="address" name="address" value ="<?php echo $users['address']; ?>" placeholder="">
+		  <input type="text" id="address" name="address" value ="<?php if(isset($address)) echo $address; else echo $users['address']; ?>" >
+		 <?php if (isset($address_error)) { ?>
+		<span class="help-inline"><?php echo $address_error; ?></span>
+	  <?php } ?>
 		</div>
 	  </div>
 	  
@@ -127,9 +162,27 @@
 	  <div class="control-group">
 		<label class="control-label" for="website">Website</label>
 		<div class="controls">
-		  <input type="text" id="website" name="website" value ="<?php echo $users['website']; ?>" placeholder="">
+		  <input type="text" id="website" name="website" value ="<?php echo $users['website']; ?>" >
 		</div>
 	  </div>
+	  
+	  <div class="control-group <?php if (isset($file_error)) echo "error"; ?>">
+    <label class="control-label" for="website">Profile Picture</label>
+    <div class="controls">
+      <input type="file" id="picture" name="picture" >  
+	  
+	  <?php if ($users['picture']) { ?>		
+		<img width="80" height="80" src="<?php echo "uploads/".$users['picture'];?>" />
+		<?php } ?>
+		
+		<?php if (isset($file_error)) { ?>
+		<span class="help-inline"><?php echo $file_error; ?></span>
+	  <?php } ?>
+					
+					
+	</div>
+	</div>
+  
 	  
 	  
 	  <div class="control-group">
@@ -140,7 +193,7 @@
 	</form>
 
 	 <?php } else {  ?>   
-	 	    No course available to edit.
+	 	    No Users available to edit.
 	 <?php }  ?>
 	  	  
 

@@ -55,9 +55,9 @@
 	</tr>
 	</thead>	           
 	<tbody>
-<?php
-$count=0;
-$con = mysql_connect('localhost', 'root', '');
+		<?php
+            $count=0;
+            $con = mysql_connect('localhost', 'root', '');
 				if (!$con) {
 					die('Could not connect: ' . mysql_error());
 					

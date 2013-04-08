@@ -1,4 +1,5 @@
 <?php
+if(isset($_POST['submit'])) {
 include "connection.php";
 
 //get user input from GET / POST method
@@ -27,6 +28,56 @@ $course_id = $data['course'];
 $created_at = time();
 
 //server side validation of input data
+if(trim($name) == ''){
+	$hasError = true;
+	$name_error = "Please Specify the Exam Name";
+}
+else{
+	$name = stripslashes(trim($name));
+}
+if(trim($_POST['description']) == '') {
+		$hasError = true;
+		$description_error = "Please specify description";
+	} else {
+			$description = stripslashes(trim($_POST['description']));
+	}
+if(trim($full_marks) == ''){
+	$hasError = true;
+	$full_marks_error = "Please Specify the Full Marks";
+}
+else{
+	$full_marks = stripslashes(trim($full_marks));
+}
+if(trim($pass_marks) == ''){
+	$hasError = true;
+	$pass_marks_error = "Please Specify the Pass Marks";
+}
+else{
+	$pass_marks = stripslashes(trim($pass_marks));
+}
+if(trim($start_time) == ''){
+	$hasError = true;
+	$start_time = "Please Specify the Start Time";
+}
+else{
+	$start_time = stripslashes(trim($start_time));
+}
+if(trim($end_time) == ''){
+	$hasError = true;
+	$end_time_error = "Please Specify the End TIme";
+}
+else{
+	$end_time = stripslashes(trim($end_time));
+}
+if(trim($date) == ''){
+	$hasError = true;
+	$date_error = "Please Specify the Exam Date";
+}
+else{
+	$date = stripslashes(trim($date));
+}
+
+if(!$hasError == true){
 if($action=="delete"){
 	$sql ="delete from `exam` where id=$id";
 }
@@ -42,9 +93,7 @@ else{
 }
 mysql_query	($sql);				
 
-header ("Location: ../exam.php?id=$course_id_for_url");
-
-	
-						
-			
+header ("Location: exam.php?id=$course_id_for_url");
+}		
+}		
 ?>
